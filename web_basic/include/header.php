@@ -67,7 +67,7 @@
                         <?php include 'navigation.php'; ?>
                     </ul>
                 </nav>
-                <p class="btnGo"><a href="//online.mrm.or.kr/y1YavoN" target="_blank">참여하기</a></p>
+                <p class="btnGo"><a href="javascript:;" onclick="openDonationModal(1)">참여하기</a></p>
                 <!-- <p class="btnAllNav"><a href="javascript:;"><img src="/web_basic/img/common/all_nav.gif" alt="전체메뉴 보기"></a></p> -->
             </div>
         </div>

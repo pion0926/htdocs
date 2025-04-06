@@ -14,12 +14,12 @@
                         <dt class="contTitle">주요 활동 <span class="engText"></span></dt>
                         <dd>
                             <ol class="halfNumList">
-                                <li><span class="numberSpan">1</span><p>국내외 보건문제 해결을 위한 연구</p></li>
+                                <li><span class="numberSpan">1</span><p>보건문제 해결을 위한 연구조사</p></li>
                                 <li><span class="numberSpan">2</span><p>지구촌 건강취약계층을 위한 국제협력</p></li>
                                 <li><span class="numberSpan">3</span><p>보건문제 해결을 위한 전문 인력 양성</p></li>
-                                <li><span class="numberSpan">4</span><p>의료취약지역 건강나눔 봉사활동 및 캠페인</p></li>
-                                <li><span class="numberSpan">5</span><p>의료접근성 향상 및 의료지원</p></li>
-                                <li><span class="numberSpan">6</span><p>지구촌 보건문제 해결을 위한 지식 및 전문가 교류활동</p></li>
+                                <li><span class="numberSpan">4</span><p>건강나눔 봉사활동 및 캠페인</p></li>
+                                <li><span class="numberSpan">5</span><p>의료접근성 향상을 위한 의료지원</p></li>
+                                <li><span class="numberSpan">6</span><p>보건 지식 확산 및 교류</p></li>
                             </ol>
                         </dd>
                     </dl>
@@ -33,25 +33,25 @@
                 </div>
                 <ul class="iconList bg_f2fafb" style="display: flex; justify-content: space-between;">
                     <li style="flex: 1; text-align: center;">
-                        <p class="imgBox"><img src="/web_basic/img/introduce/형평성.png" alt="건강 형평성"><br><strong>건강 형평성</strong> <br>(Health Equity)<br> </p>
+                        <p class="imgBox"><img src="/web_basic/img/introduce/core_value01.png" alt="건강 형평성" style="width: 80px; height: auto;"><br><strong>건강 형평성</strong> <br>(Health Equity)<br> </p>
                         <dl>
                             <dt> </dt>
                             <dd>건강기본권을 지키고,<br> 지구촌 누구도 소외되지 않는 <br> 보건의료서비스 접근성을 확보합니다.</dd>
                         </dl>
                     </li>
-                    <li><p class="imgBox"><img src="/web_basic/img/introduce/지속가능성.png" alt="Diversity Respect"><br><strong>지속가능성</strong> <br>(Sustainability)<br> </p>
+                    <li><p class="imgBox"><img src="/web_basic/img/introduce/core_value02.png" alt="Diversity Respect" style="width: 80px; height: auto;"><br><strong>지속가능성</strong> <br>(Sustainability)<br> </p>
                         <dl>
                             <dt> </dt>
                             <dd>단기적인 지원을 넘어,<br> 지속 가능한 성장과 발전을<br> 추구합니다. </dd>
                         </dl>
                     </li>
-                    <li><p class="imgBox"><img src="/web_basic/img/introduce/혁신.png" alt="혁신과 협력"><br> <strong>혁신과 협력</strong> <br>(Innovation & Collaboration)<br> </p>
+                    <li><p class="imgBox"><img src="/web_basic/img/introduce/core_value03.png" alt="혁신과 협력" style="width: 80px; height: auto;"><br> <strong>혁신과 협력</strong> <br>(Innovation & Collaboration)<br> </p>
                         <dl>
                             <dt> </dt>
                             <dd>다양한 파트너 및 전문가들과 협력하여,<br>혁신적인 보건의료 솔루션을 모색하고<br> 제공합니다.</dd>
                         </dl>
                     </li>
-                    <li><p class="imgBox"><img src="/web_basic/img/introduce/투명성.png" alt="투명성과 신뢰"><br> <strong>투명성과 신뢰</strong> <br> (Transparency & Trust)<br> </p>
+                    <li><p class="imgBox"><img src="/web_basic/img/introduce/core_value04.png" alt="투명성과 신뢰" style="width: 80px; height: auto;"><br> <strong>투명성과 신뢰</strong> <br> (Transparency & Trust)<br> </p>
                         <dl>
                             <dt> </dt>
                             <dd>투명하고 윤리적인 경영으로 ,<br>후원자와 협력 기관, 지역사회와<br> 신뢰를 구축합니다.</dd>
@@ -67,12 +67,12 @@
                 <ul class="ciList">
                     <li>
                         국문
-                        <p class="imgBox"><img src="/web_basic/img/introduce/ci_kr.png" alt="국문 CI"></p>
+                        <p class="imgBox"><img src="/web_basic/img/introduce/ci_kr.png" alt="국문 CI" style="width: 300px; height: auto;"></p>
                         <p class="btnCi"><a href="/web_basic/img/introduce/ci_kr.png" download=""><img src="/web_basic/img/introduce/ci_jpg_down.gif" alt="국문 CI JPG 다운로드"></a><a href="/web_basic/img/introduce/ci_kor.ai" download=""><img src="/web_basic/img/introduce/ci_ai_down.gif" alt="국문 CI AI 다운로드"></a></p>
                     </li>
                     <li>
                         영문
-                        <p class="imgBox"><img src="/web_basic/img/introduce/ci_eng(2).png" alt="영문 CI"></p>
+                        <p class="imgBox"><img src="/web_basic/img/introduce/ci_eng(2).png" alt="영문 CI" style="width: 300px; height: auto;"></p>
                         <p class="btnCi"><a href="/web_basic/img/introduce/ci_eng(2).png" download=""><img src="/web_basic/img/introduce/ci_jpg_down.gif" alt="영문 CI JPG 다운로드"></a><a href="/web_basic/img/introduce/ci_eng.ai" download=""><img src="/web_basic/img/introduce/ci_ai_down.gif" alt="영문 CI AI 다운로드"></a></p>
                     </li>
                 </ul>

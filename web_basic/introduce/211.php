@@ -1,8 +1,58 @@
+<?php include '../include/header.php'; ?>
+<style>
+    .ambassadorsList {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .ambassadorsList li {
+        margin-bottom: 30px;
+    }
+    .ambassadorsList .imgBox {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    .ambassadorsList .imgBox img {
+        width: 180px;
+        height: 240px;
+        object-fit: cover;
+        border-radius: 4px;
+        background: none;
+    }
+    .ambassadorsList dl {
+        margin: 0;
+        text-align: center;
+    }
+    .ambassadorsList dt {
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 10px;
+    }
+    .chairmanLink {
+        text-align: center;
+        margin: 30px 0;
+    }
+    .chairmanLink a {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #00afb1;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+    }
+    .chairmanLink a:hover {
+        background-color: #009092;
+    }
+</style>
 <section id="container" class="introduce group_num_211">
     <div class="contents page_211">
         <div class="contenstView">
             <div class="section ambassadorsTop">
                 <h3 class="sectionTitle"><br> 글로벌헬스파트너스를 이끄는 리더쉽 <strong class="c_00afb1">'임원진'</strong>을 소개합니다</h3>
+                <div class="chairmanLink">
+                    <a href="/web_basic/introduce/207.php">이사장 인사말 보기</a>
+                </div>
                 <ul class="ambassadorsList">
                     <li>
                         <p class="imgBox"><img src="/web_basic/img/introduce/사본 -정애숙.png" alt="정애숙" style="width: 200px; height: auto;"></p>
@@ -12,42 +62,7 @@
                     </li>
                     <li>
                         <dl>
-                            <dt style="text-align: left; font-weight: normal; font-size: 18px;">충북대학교병원 교수 및 국제개발연구소 부소장으로, 연세대학교에서 보건행정학 박사학위를 취득했습니다. KOICA 프로젝트 책임자, 국회 정책보좌관 경력을 바탕으로 국제보건 및 개발협력 분야에서 활발히 활동하고 있습니다. 응급의료체계, 모자보건, 보건의료 성과관리 등 글로벌 프로젝트를 주도하며 차세대 글로벌 헬스 리더를 양성하고 있습니다.</dt>
-                        </dl>
-                    </li>
-                    <li>
-                        <p class="imgBox"><img src="/web_basic/img/introduce/이유정.png" alt="이유정" style="width: 200px; height: auto;"></p>
-                        <dl>
-                            <dt>이유정 이사</dt>
-                        </dl>
-                    </li>
-                    <li>
-                        <dl>
-                            <dt style="text-align: left; font-weight: normal; font-size: 18px;"> 경희대학교 간호과학대학 학술연구교수로, 연세대학교에서 간호학 박사학위를 취득했습니다. 국군간호사관학교와 대구보건대학교에서 근무하며 국민 건강증진에 기여했습니다. 금연정책, 보건교육, 국제보건 분야에서 활발한 연구와 교육을 수행하고 있습니다. </dt>
-                        </dl>
-                    </li>
-                    <li>
-                        <p class="imgBox"><img src="/web_basic/img/introduce/정유미.png" alt="정유미" style="width: 200px; height: auto;"></p>
-                        <dl>
-                            <dt>정유미 이사</dt>
-                        </dl>
-                    </li>
-                    <li>
-                        <dl>
-                            <dt style="text-align: left; font-weight: normal; font-size: 18px;">충북대학교 의과대학 교수로, 국군의학연구소와 서울대학교 임상약리학과에서 연구했습니다. 충북대학교병원 임상시험센터 부센터장을 역임하고, 벤처기업 대표로서 혁신적인 의료 연구와 임상시험 분야에서 활동하고 있습니다.
-                            </dt>
-                        </dl>
-                    </li>
-                    <li>
-                        <p class="imgBox"><img src="/web_basic/img/introduce/은승표.png" alt="은승표" style="width: 200px; height: auto;"></p>
-                        <dl>
-                            <dt>은승표 이사</dt>
-                        </dl>
-                    </li>
-                    <li>
-                        <dl>
-                            <dt style="text-align: left; font-weight: normal; font-size: 18px;">스포츠의학 전문의로 가톨릭의과대학 정형외과 교수와 미국 버몬트 주립대 연구교수를 역임했습니다. 2018 평창동계올림픽 의무책임자를 맡았으며, 현재 코리아정형외과 원장으로 스포츠 의학 분야에서 활발히 활동하고 있습니다.
-                            </dt>
+                            <dt style="text-align: left; font-weight: normal; font-size: 18px;">충북대학교병원 교수이자 충북대학교 국제개발연구소 부소장으로 활동하고 있습니다. 국군간호사관학교에서 간호학을 전공한 후, 연세대학교에서 보건행정학 석·박사 학위를 취득하였으며, 스웨덴 Karolinska Institutet에서 Safety Promotion을 연구하였습니다. 국회 정책보좌관, 한국보건사회연구원 연구개발팀장, KOICA 프로젝트 현지책임자 등의 경험을 바탕으로 국제보건 및 개발협력 사업을 주도해 왔습니다. 특히, 응급의료체계 역량 강화, 모자보건 환경 개선, 보건의료 성과관리(M&E) 등 다수의 글로벌 프로젝트를 기획·운영하며, 국제 보건 분야에서 실질적인 변화를 이끌어왔습니다. 현재 국내외 보건의료 및 국제개발협력 사업을 총괄하며, 정책 자문과 교육을 통해 차세대 글로벌 헬스 리더를 양성하는 데 주력하고 있습니다.</dt>
                         </dl>
                     </li>
                     <li>
@@ -58,8 +73,7 @@
                     </li>
                     <li>
                         <dl>
-                            <dt style="text-align: left; font-weight: normal; font-size: 18px;">충북대학교 의과대학 교수로 국군의학연구소, 서울대학교 임상약리학과 연수의, 건국대학교병원 및 동아대학교 의과대학에서 임상약리학 교수로 활동하였으며, 충북대학교병원 임상시험센터 부센터장과 청주오송첨단임상시험센터 센터장을 역임하였습니다. 또한, 벤처기업 대표이사로서 혁신적인 의료 연구와 임상시험 분야에서 다양한 경험을 쌓아왔습니다.
-                            </dt>
+                            <dt style="text-align: left; font-weight: normal; font-size: 18px;">충북대학교 의과대학 교수로 국군의학연구소, 서울대학교 임상약리학과 연수의, 건국대학교병원 및 동아대학교 의과대학에서 임상약리학 교수로 활동하였으며, 충북대학교병원 임상시험센터 부센터장과 청주오송첨단임상시험센터 센터장을 역임하였습니다. 또한, 벤처기업 대표이사로서 혁신적인 의료 연구와 임상시험 분야에서 다양한 경험을 쌓아왔습니다.</dt>
                         </dl>
                     </li>
                     <li>
@@ -70,19 +84,51 @@
                     </li>
                     <li>
                         <dl>
-                            <dt style="text-align: left; font-weight: normal; font-size: 18px;">ICT 전문가, ㈜터보소프트 대표이사 겸 ㈜코쿤 기술이사. 청주대 컴퓨터정보공학 전공, 충북대 바이오인포매틱스·멀티미디어공학 박사. KOICA IBS 등 국제개발협력 프로젝트 참여, ICT 기반 헬스케어 솔루션 개발 및 스마트 보건의료 시스템 혁신 주도하고 있습니다.
-                            </dt>
+                            <dt style="text-align: left; font-weight: normal; font-size: 18px;">ICT 전문가, ㈜터보소프트 대표이사 겸 ㈜코쿤 기술이사. 청주대 컴퓨터정보공학 전공, 충북대 바이오인포매틱스·멀티미디어공학 박사. KOICA IBS 등 국제개발협력 프로젝트 참여, ICT 기반 헬스케어 솔루션 개발 및 스마트 보건의료 시스템 혁신 주도하고 있습니다.</dt>
                         </dl>
                     </li>
                     <li>
-                        <p class="imgBox"><img src="/web_basic/img/introduce/공기서.png" alt="공기서" style="width: 200px; height: auto;"></p>
+                        <p class="imgBox"><img src="/web_basic/img/introduce/은승표.png" alt="은승표" style="width: 200px; height: auto;"></p>
+                        <dl>
+                            <dt>은승표 이사</dt>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt style="text-align: left; font-weight: normal; font-size: 18px;">스포츠의학 전문의로 가톨릭의과대학 정형외과 교수와 미국 버몬트 주립대 스포츠의학과 연구교수를 역임하였으며, 대한정형외과 스포츠의학회 이사, 대한태권도협회 의무이사, 대한스키지도자연맹 의과학위원장 등 다양한 학회에서 활동하고 있습니다. 또한, 2018 평창동계올림픽 정선알파인센터 의무책임자를 맡아 스포츠 의학 분야에 기여하였습니다. 현재 코리아정형외과 원장으로서 무릎 및 스포츠 손상 치료와 재활에 주력하고 있습니다.</dt>
+                        </dl>
+                    </li>
+                    <li>
+                        <p class="imgBox"><img src="/web_basic/img/introduce/이유정.png" alt="이유정" style="width: 200px; height: auto;"></p>
+                        <dl>
+                            <dt>이유정 이사</dt>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt style="text-align: left; font-weight: normal; font-size: 18px;">경희대학교 간호과학대학의 학술연구교수로 활동하였습니다. 국군간호사관학교에서 간호학을 전공하고, 연세대학교에서 간호학 석·박사 학위를 취득하였습니다. 국군통합병원과 국군간호사관학교에서 간호 실무 및 교육을 담당했으며, 한국금연운동협의회 기획실장, 대구보건대학교 부교수 등을 역임하며 국민 건강증진 및 금연 교육에 기여하였습니다. 국제개발협력 및 보건 교육 프로젝트를 수행하며 연구와 교육을 병행하고 있으며, 특히 금연정책, 보건교육 및 국제보건 분야에서 활발한 연구를 진행하고 있습니다.</dt>
+                        </dl>
+                    </li>
+                    <li>
+                        <p class="imgBox"><img src="/web_basic/img/introduce/정유미.png" alt="정유미" style="width: 200px; height: auto;"></p>
+                        <dl>
+                            <dt>정유미 이사</dt>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt style="text-align: left; font-weight: normal; font-size: 18px;">국군간호사관학교 교수로 재직하며, 군건강정책연구소장, 교무처장, 임상간호학처장 등을 역임하였습니다. 재난간호 교육과 해외 긴급구호 활동을 수행하며, XR 기반 중증외상처치 훈련 개발 등 군 의료 및 간호 교육의 발전에 기여하고 있습니다.</dt>
+                        </dl>
+                    </li>
+                    <li>
+                        <p class="imgBox"><img src="/web_basic/img/introduce/공기서.jpg" alt="공기서" style="width: 200px; height: auto;"></p>
                         <dl>
                             <dt>공기서 감사</dt>
                         </dl>
                     </li>
                     <li>
                         <dl>
-                            <dt style="text-align: left; font-weight: normal; font-size: 18px;">충북대 경제학 박사, 현재 충북대 강사이자 국제개발연구소 부소장으로 재직. 과거 고려대와 메릴랜드대 강사 역임. 굿네이버스, KOICA 등과 협력해 농촌개발 프로그램 성과관리 및 PM 업무 수행하고 있습니다.</dt>
+                            <dt style="text-align: left; font-weight: normal; font-size: 18px;">충북대학교에서 경제학 박사 학위를 취득한 경제학자로, 현재 충북대학교 강사이자 국제개발연구소 부소장으로 재직 중입니다. 과거 고려대학교 세종캠퍼스 강사와 미국 메릴랜드 대학교(College Park) 방문학자를 역임하였으며, 굿네이버스와 KOICA 등과 협력하여 키르기즈공화국, 베트남 등지에서 농촌개발 및 포용적 농촌개발 프로그램의 성과관리와 사업기획관리(PM) 업무를 수행하였습니다.</dt>
                         </dl>
                     </li>
                     <li>
@@ -93,8 +139,12 @@
                     </li>
                     <li>
                         <dl>
-                            <dt style="text-align: left; font-weight: normal; font-size: 18px;">경제성 분석 및 예측 전문가입니다. 계명대학교 경제학 박사이자 e-비즈니스 경영정보학 박사입니다. 다년간 경제성 분석, 정책 평가, 산업연관 분석, AI 기반 예측 연구를 수행했습니다. 국내외 보건의료 및 경제 정책 프로젝트에 참여했습니다.
-                            </dt>
+                            <dt style="text-align: left; font-weight: normal; font-size: 18px;">경제성 분석 및 경제 예측 전문가로, ㈜한국경제예측연구소 대표이사로 활동하고 있습니다. 계명대학교에서 경제학을 전공하고, 경제학 박사 및 e-비즈니스 경영정보학 박사 학위를 취득하였습니다. 다년간 경제성 분석, 정책 평가, 산업연관 분석, 인공지능 기반 경제 예측 연구를 수행하였으며, 홍익대학교 연구교수, 금오공과대학교 초빙교수 등을 역임하였습니다. 국내외 보건의료 및 경제 정책 관련 프로젝트에 참여하여, 보건의료 R&D 경제성 평가, 글로벌 보건 프로젝트의 경제적 타당성 분석, 스마트 병원 구축 타당성 연구 등을 진행하였습니다. 특히 KOICA를 비롯한 국제개발협력 사업에서 네팔, 방글라데시, 탄자니아 등의 보건의료 프로젝트 경제성 분석을 담당하며, 경제적 측면에서의 정책 및 사업 평가를 전문적으로 수행하고 있습니다.</dt>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt style="text-align: left; font-weight: normal; font-size: 18px;">경제성 분석 및 예측 전문가입니다. 계명대학교 경제학 박사이자 e-비즈니스 경영정보학 박사입니다. 다년간 경제성 분석, 정책 평가, 산업연관 분석, AI 기반 예측 연구를 수행했습니다. 국내외 보건의료 및 경제 정책 프로젝트에 참여했습니다.</dt>
                         </dl>
                     </li>
                 </ul>

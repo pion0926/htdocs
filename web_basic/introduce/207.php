@@ -1,3 +1,95 @@
+<?php include '../include/header.php'; ?>
+<style>
+    .greetingCont {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        padding: 40px 20px;
+        position: relative;
+    }
+    .greetingCont .imgBox {
+        max-width: 280px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+        overflow: hidden;
+    }
+    .greetingCont .imgBox img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        display: block;
+        position: relative;
+    }
+    .greetingCont .imgBox::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: inherit;
+        filter: blur(10px);
+        z-index: -1;
+        transform: scale(1.1);
+    }
+    .greetingText {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+    .greetingTop {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .greetingTop dt {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-bottom: 15px;
+        color: #333;
+    }
+    .greetingTop dd {
+        color: #666;
+        line-height: 1.6;
+    }
+    .greetingWriting {
+        background: #f8f8f8;
+        padding: 30px;
+        border-radius: 8px;
+    }
+    .greetingWriting ul li {
+        margin-bottom: 20px;
+    }
+    .greetingWriting ul li dt {
+        font-weight: bold;
+        color: #00afb1;
+        margin-bottom: 10px;
+    }
+    .greetingWriting ul li dd {
+        color: #666;
+        line-height: 1.6;
+    }
+    .basicText {
+        margin: 30px 0;
+        text-align: center;
+        color: #333;
+        line-height: 1.8;
+    }
+    .greetingWriter {
+        text-align: right;
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 1px solid #eee;
+    }
+    .greetingWriter img {
+        margin-left: 10px;
+        vertical-align: middle;
+    }
+</style>
 <section id="container" class="introduce group_num_207">
     <div class="contents page_207">
         <div class="contenstView">

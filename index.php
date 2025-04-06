@@ -28,11 +28,11 @@
                     <div class="report-wrapper">
                         <div class="textCont">
                             <div class="report-header">
-                                <h2 class="report-title">투명한 재정 관리</h2>
-                                <p class="report-subtitle">여러분의 소중한 후원금은 투명하게 관리됩니다.</p>
+                                <h2 class="report-title">투명하고 효율적인 재정관리</h2>
+                                <p class="report-subtitle">투명성과 신뢰는 글로벌헬스파트너스의 핵심 가치 입니다.</p>
                             </div>
                             <div class="report-description">
-                                <p>글로벌헬스파트너스는 건강한 단체입니다.</p>
+                                <p></p>
                                 <p>모든 수입과 지출을 투명하게 관리하며,<br/>활동 목적에 따라 꼭 필요한 곳에 효율적으로 재정을 사용하고 있습니다.</p>
                             </div>
                             <div class="report-links">
