@@ -59,7 +59,7 @@
             </div>
         </div>
         <div class="headerWrap">
-            <h1><a href="/web_basic"><img src="/web_basic/img/common/GHP한영로고.jpg" alt="글로벌헬스파트너스"></a></h1>
+            <h1><a href="/web_basic"><img src="/web_basic/img/common/로고_가로형_한글영문(new).png" alt="글로벌헬스파트너스" style="height: 50px; width: auto;"></a></h1>
             <div class="rightCont">
                 <nav class="navList">
                     <ul id="gnb">

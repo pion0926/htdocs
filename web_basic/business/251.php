@@ -1,33 +1,6 @@
 <section id="container" class="business group_num_213">
     <div class="contents page_251">
         <div class="contenstView">
-            <div class="header">
-                <h2 class="shotLine">의료지원</h2>
-                <div class="basicText mainDesc">
-                    글로벌헬스파트너스는 지구촌 곳곳의 의료 취약 지역을 대상으로 한 긴급 및 지속적인 의료지원을 제공합니다. 의료비 지원, 의료장비 및 의약품 지원, 보건의료 인력 파견 등을 통해 생명을 구하고 실질적인 건강 증진 효과를 만들어냅니다.
-                </div>
-            </div>
-
-            <div class="internationalCooperation">
-                <h3 class="shotLine">국제협력</h3>
-                <div class="basicText mainDesc">
-                    글로벌헬스파트너스는 국제기구, 정부, 민간단체와의 협력 네트워크를 통해 효과적인 국제보건 사업을 수행합니다. ODA 사업, 글로벌 보건 거버넌스 강화, 국제개발 협력 사업 등을 통해 지구촌 건강 증진에 기여합니다.
-                </div>
-            </div>
-
-            <div class="volunteerActivities">
-                <h3 class="shotLine">봉사활동</h3>
-                <div class="basicText mainDesc">
-                    글로벌헬스파트너스는 의료진, 보건의료 전문가, 일반 시민들이 참여하는 다양한 봉사활동을 통해 현지 의료지원과 보건교육을 제공합니다. 지구촌봉사단, 프로젝트 봉사단, 글로벌 연수 프로그램 등을 통해 실질적인 도움을 전달합니다.
-                </div>
-            </div>
-
-            <div class="talentDevelopment">
-                <h3 class="shotLine">인재양성</h3>
-                <div class="basicText mainDesc">
-                    글로벌헬스파트너스는 국제보건 분야의 전문가와 리더를 양성하기 위한 다양한 교육 프로그램을 운영합니다. 국제보건전문가 과정, 스포츠보건 전문가 과정, 차세대 글로벌 리더 양성 프로그램 등을 통해 미래의 보건의료 인재를 육성합니다.
-                </div>
-            </div>
 
             <div class="research">
                 <h3 class="shotLine">연구조사</h3>
@@ -74,11 +47,12 @@
                 </div>
             </div>
 
-            <div class="medicalSupport">
+            <div class="research">
                 <h3 class="shotLine">의료지원</h3>
                 <div class="basicText mainDesc">
                     글로벌헬스파트너스는 지구촌 곳곳의 의료 취약 지역을 대상으로 한 긴급 및 지속적인 의료지원을 제공합니다. 의료비 지원, 의료장비 및 의약품 지원, 보건의료 인력 파견 등을 통해 생명을 구하고 실질적인 건강 증진 효과를 만들어냅니다.
                 </div>
+
                 <div class="halfCont zigzagCont">
                     <div class="imgBox">
                         <img src="/web_basic/img/business/medical_support.jpg" alt="의료지원 - 현장 의료 지원 활동">
@@ -150,7 +124,6 @@
     background: #fff;
     border-radius: 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: block !important;
 }
 
 .halfCont .imgBox {
@@ -198,8 +171,6 @@
     overflow: hidden;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background: #fff;
-    position: relative;
 }
 
 .zigzagCont .imgBox img {
@@ -207,12 +178,6 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
-    transition: transform 0.3s ease;
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
-    transform: translateZ(0);
-    backface-visibility: hidden;
-    filter: brightness(1.02) contrast(1.02);
 }
 
 .zigzagCont .imgBox:before {
@@ -260,4 +225,5 @@
         font-size: 1.6rem;
     }
 }
+
 </style>

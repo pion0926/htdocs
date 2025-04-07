@@ -21,7 +21,7 @@
                             </ul>
                         </div>
                         <div class="imgBox">
-                            <img src="/web_basic/img/business/volunteer_domestic.jpg" alt="지역사회 건강증진 활동">
+                            <img src="/web_basic/img/business/혈당측정.jpg" alt="지역사회 건강증진 활동 - 혈당측정 봉사활동">
                         </div>
                     </div>
                 </div>

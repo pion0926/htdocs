@@ -34,12 +34,13 @@
     }
     .chairmanLink a {
         display: inline-block;
-        padding: 10px 20px;
+        padding: 5px 10px;
         background-color: #00afb1;
         color: white;
         text-decoration: none;
         border-radius: 4px;
         transition: background-color 0.3s;
+        font-size: 14px;
     }
     .chairmanLink a:hover {
         background-color: #009092;
@@ -50,14 +51,19 @@
         <div class="contenstView">
             <div class="section ambassadorsTop">
                 <h3 class="sectionTitle"><br> 글로벌헬스파트너스를 이끄는 리더쉽 <strong class="c_00afb1">'임원진'</strong>을 소개합니다</h3>
-                <div class="chairmanLink">
+                <!-- <div class="chairmanLink">
                     <a href="/web_basic/introduce/207.php">이사장 인사말 보기</a>
-                </div>
+                </div> -->
                 <ul class="ambassadorsList">
                     <li>
                         <p class="imgBox"><img src="/web_basic/img/introduce/사본 -정애숙.png" alt="정애숙" style="width: 200px; height: auto;"></p>
                         <dl>
                             <dt>정애숙 이사장</dt>
+                            <dt>
+                                <div class="chairmanLink">
+                                    <a href="/web_basic/introduce/introduce.php?section=introduce&pagen=207">이사장 인사말 보기</a>
+                                </div>
+                            </dt>
                         </dl>
                     </li>
                     <li>
@@ -84,7 +90,7 @@
                     </li>
                     <li>
                         <dl>
-                            <dt style="text-align: left; font-weight: normal; font-size: 18px;">ICT 전문가, ㈜터보소프트 대표이사 겸 ㈜코쿤 기술이사. 청주대 컴퓨터정보공학 전공, 충북대 바이오인포매틱스·멀티미디어공학 박사. KOICA IBS 등 국제개발협력 프로젝트 참여, ICT 기반 헬스케어 솔루션 개발 및 스마트 보건의료 시스템 혁신 주도하고 있습니다.</dt>
+                            <dt style="text-align: left; font-weight: normal; font-size: 18px;">CT 전문가로, ㈜터보소프트의 대표이사이자 ㈜코쿤의 기술이사로 활동하고 있습니다. 청주대학교에서 컴퓨터정보공학을 전공하고, 충북대학교에서 바이오인포매틱스 및 멀티미디어공학 박사 학위를 취득하였습니다. 현재 KOICA IBS 사업을 포함한 다양한 국제 개발협력 프로젝트에 참여하며, ICT 기반 헬스케어 솔루션 개발과 스마트 기술을 활용한 보건·의료 시스템 혁신을 주도하고 있습니다. R&D 총괄을 담당하며 기술 개발 및 글로벌 협력 사업을 추진하고 있습니다.</dt>
                         </dl>
                     </li>
                     <li>
@@ -139,12 +145,7 @@
                     </li>
                     <li>
                         <dl>
-                            <dt style="text-align: left; font-weight: normal; font-size: 18px;">경제성 분석 및 경제 예측 전문가로, ㈜한국경제예측연구소 대표이사로 활동하고 있습니다. 계명대학교에서 경제학을 전공하고, 경제학 박사 및 e-비즈니스 경영정보학 박사 학위를 취득하였습니다. 다년간 경제성 분석, 정책 평가, 산업연관 분석, 인공지능 기반 경제 예측 연구를 수행하였으며, 홍익대학교 연구교수, 금오공과대학교 초빙교수 등을 역임하였습니다. 국내외 보건의료 및 경제 정책 관련 프로젝트에 참여하여, 보건의료 R&D 경제성 평가, 글로벌 보건 프로젝트의 경제적 타당성 분석, 스마트 병원 구축 타당성 연구 등을 진행하였습니다. 특히 KOICA를 비롯한 국제개발협력 사업에서 네팔, 방글라데시, 탄자니아 등의 보건의료 프로젝트 경제성 분석을 담당하며, 경제적 측면에서의 정책 및 사업 평가를 전문적으로 수행하고 있습니다.</dt>
-                        </dl>
-                    </li>
-                    <li>
-                        <dl>
-                            <dt style="text-align: left; font-weight: normal; font-size: 18px;">경제성 분석 및 예측 전문가입니다. 계명대학교 경제학 박사이자 e-비즈니스 경영정보학 박사입니다. 다년간 경제성 분석, 정책 평가, 산업연관 분석, AI 기반 예측 연구를 수행했습니다. 국내외 보건의료 및 경제 정책 프로젝트에 참여했습니다.</dt>
+                            <dt style="text-align: left; font-weight: normal; font-size: 18px;">㈜한국경제예측연구소 대표이사이며, 계명대학교에서 경제학 박사와 e-비즈니스 경영정보학 박사 학위를 취득하였습니다. 홍익대학교 연구교수, 금오공과대학교 초빙교수를 역임하였으며, KOICA 등 국제개발협력 사업에서 네팔, 방글라데시, 탄자니아 등의 보건의료 프로젝트 경제성 분석을 담당하고 있습니다.</dt>
                         </dl>
                     </li>
                 </ul>

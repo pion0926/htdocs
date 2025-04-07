@@ -3,6 +3,7 @@
 /* Header */
 #header{width:100%;position:fixed;top:0;left:0;z-index:120;background:#fff;border-bottom:1px solid #d2d3d4;}
 #header h1{position:absolute;top:20px;left:0;font-size:0;}
+#header h1 img{height: 60px; width: auto;}
 #header .topBtnList{max-width:1200px;margin:0 auto;padding:13px 0;display:flex;justify-content:flex-end;align-items:center;}
 #header .topBtnList .memberList{display:flex;}
 #header .topBtnList .memberList li{position:relative;padding-left:21px;margin-left:21px;}
