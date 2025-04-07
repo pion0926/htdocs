@@ -47,7 +47,7 @@
                 </div>
             </div>
 
-            <div class="research">
+            <!-- <div class="research">
                 <h3 class="shotLine">의료지원</h3>
                 <div class="basicText mainDesc">
                     글로벌헬스파트너스는 지구촌 곳곳의 의료 취약 지역을 대상으로 한 긴급 및 지속적인 의료지원을 제공합니다. 의료비 지원, 의료장비 및 의약품 지원, 보건의료 인력 파견 등을 통해 생명을 구하고 실질적인 건강 증진 효과를 만들어냅니다.
@@ -76,7 +76,7 @@
                         <img src="/web_basic/img/business/sustainable_medical.jpg" alt="지속가능한 의료지원 - 의료진 교육 현장">
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </section>

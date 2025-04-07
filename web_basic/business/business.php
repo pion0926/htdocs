@@ -28,7 +28,7 @@ if ($pagen >= 1 && $pagen <= 900) {
             $page_title = '연구·조사';
             break;
         case '252':
-            $page_title = '지구촌봉사단';
+            $page_title = '의료지원';
             break;
         case '253':
             $page_title = '해외파견간사';
