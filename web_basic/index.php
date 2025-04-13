@@ -38,9 +38,6 @@
                             <div class="report-links">
                                 <a href="/web_basic/introduce/introduce.php?pagen=448" class="report-link">
                                     <span class="link-text">재정보고</span>
-                                    <span class="link-icon">
-                                        <img src="/web_basic/img/main/report_view.gif" alt="바로가기" />
-                                    </span>
                                 </a>
                             </div>
                         </div>

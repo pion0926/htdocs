@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10,user-scalable=yes">
-    <meta name="description" content="지구촌 가난한 이웃의 자립을 돕고 지속가능한 발전을 실현하는 국제개발 NGO">
-    <meta property="og:description" content="지구촌 가난한 이웃의 자립을 돕고 지속가능한 발전을 실현하는 국제개발 NGO">
-    <meta name="keywords" content="지구촌 가난한 이웃의 자립을 돕고 지속가능한 발전을 실현하는 국제개발 NGO">
+    <meta name="description" content="글로벌헬스파트너스, 누구도 소외되지 않는 건강한 삶, 보다 나은 내일을 만들어가는 NGO">
+    <meta property="og:description" content="글로벌헬스파트너스,누구도 소외되지 않는 건강한 삶, 보다 나은 내일을 만들어가는 NGO">
+    <meta name="keywords" content="글로벌헬스파트너스,누구도 소외되지 않는 건강한 삶, 보다 나은 내일을 만들어가는 NGO">
     <meta property="og:site_name" content="글로벌헬스파트너스-Global Health Partners">
     <meta property="og:title" content="글로벌헬스파트너스">
     <meta property="og:url" content="https://gbhealthpartners.kr">
-    <meta property="og:image" content="https://gbhealthpartners.kr/web_basic/img/common/footer_GHP_영문로고.png">
+    <meta property="og:image" content="/web_basic/img/common/로고_가로형-한글영문(new).png">
     <meta property="og:image:width" content="400">
     <meta property="og:image:height" content="200">
     <meta property="og:type" content="website">
-    <link rel="shortcut icon" href="/web_basic/img/common/footer_GHP_영문로고.png">
-    <link rel="icon" type="image/png" href="/web_basic/img/common/footer_GHP_영문로고.png">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="favicon.ico">
     <title>글로벌헬스파트너스</title>
     
     <!-- Google Tag Manager -->
