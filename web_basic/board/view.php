@@ -1,6 +1,5 @@
 <?php 
 // 데이터베이스 연결 파일 포함
-require_once "../include/admin_check.php"; 
 
 include "../include/db_connect.php"; 
 include "../include/header.php"; 
@@ -69,10 +68,12 @@ if ($sno > 0) {
         $error_message = "데이터베이스에 연결할 수 없습니다.";
         error_log("Database connection failed in view.php.");
     }
-    $is_admin = isset($_SESSION['is_admin']) && $_SESSION['is_admin'] === true; // 관리자 여부 확인 (실제 구현에 맞게 수정)
 } else {
     $error_message = "잘못된 접근입니다. 게시글 번호가 올바르지 않습니다.";
 }
+
+$is_admin = isset($_SESSION['is_admin']) && $_SESSION['is_admin'] === true; // 관리자 여부 확인 (실제 구현에 맞게 수정)
+
 ?>
 
 <div id="news" class="wrap">
@@ -161,11 +162,10 @@ if ($sno > 0) {
                         <div class="viewBottom">
                             <div class="btnWrap">
                                 <a href="/web_basic/board/list.php?pagen=285" class="btnList">목록</a>
-                                <?php if ($is_admin): ?>
-                                    <a href="delete_process.php?sno=<?php echo $notice['sno']; ?>"
-                                       class="btnDelete"
-                                       onclick="return confirm('정말로 이 게시글을 삭제하시겠습니까?\n삭제 후 목록에서는 보이지 않게 됩니다.');">삭제</a>
-                                <?php endif; ?>
+
+                                <a href="delete_process.php?sno=<?php echo $notice['sno']; ?>"
+                                    class="btnDelete"
+                                    onclick="return confirm('정말로 이 게시글을 삭제하시겠습니까?\n삭제 후 목록에서는 보이지 않게 됩니다.');">삭제</a>
                             </div>
                         </div>
                     </div>
