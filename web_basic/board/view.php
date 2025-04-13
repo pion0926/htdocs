@@ -1,5 +1,7 @@
 <?php 
 // 데이터베이스 연결 파일 포함
+require_once "../include/admin_check.php"; 
+
 include "../include/db_connect.php"; 
 include "../include/header.php"; 
 
@@ -159,18 +161,11 @@ if ($sno > 0) {
                         <div class="viewBottom">
                             <div class="btnWrap">
                                 <a href="/web_basic/board/list.php?pagen=285" class="btnList">목록</a>
-                                <?php
-                                // --- 삭제 버튼 추가 ---
-                                // 관리자일 경우에만 삭제 버튼 표시
-                                if ($is_admin):
-                                ?>
+                                <?php if ($is_admin): ?>
                                     <a href="delete_process.php?sno=<?php echo $notice['sno']; ?>"
                                        class="btnDelete"
                                        onclick="return confirm('정말로 이 게시글을 삭제하시겠습니까?\n삭제 후 목록에서는 보이지 않게 됩니다.');">삭제</a>
-                                <?php
-                                endif;
-                                // --- 삭제 버튼 끝 ---
-                                ?>
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>
@@ -215,6 +210,55 @@ if ($sno > 0) {
 .viewInfo dt { color: #a0aec0; font-weight: 500; flex-shrink: 0; }
 .viewInfo dd { margin: 0; font-weight: 500; color: #4a5568; }
 .viewContent img { max-width: 100%; height: auto; margin-bottom: 20px; } /* 이미지 스타일 예시 */
+/* === 버튼 관련 수정된 CSS 시작 === */
+.btnWrap {
+    display: flex;
+    /* 버튼들을 양쪽 끝으로 배치, 필요시 flex-end 로 변경하여 오른쪽 정렬 */
+    justify-content: space-between; 
+    /* 버튼들의 세로 정렬을 중앙으로 맞춤 */
+    align-items: center; 
+    margin-top: 20px; 
+}
+
+.btnList, .btnDelete {
+    /* box-sizing: border-box; 를 추가하여 padding과 border가 너비/높이에 포함되도록 함 */
+    box-sizing: border-box; 
+    display: inline-block; /* 또는 inline-flex */
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 5px; 
+    text-decoration: none; 
+    font-size: 16px; 
+    /* line-height: 1.5; */ /* line-height 대신 padding으로 높이 조절 유도, 기본값 사용 */
+    line-height: normal; 
+    text-align: center; /* 텍스트 중앙 정렬 */
+    vertical-align: middle; /* inline-block 요소간 세로 정렬 */
+    cursor: pointer; 
+    transition: background-color 0.3s, color 0.3s; 
+    /* 최소 높이를 명시적으로 설정하여 일관성 확보 (선택 사항) */
+    /* min-height: 40px; */ /* 버튼 내용과 패딩에 맞는 적절한 값 */
+}
+
+.btnList {
+    background-color: #2c5282; 
+    color: white; 
+}
+
+.btnList:hover {
+    background-color: #2b6cb0; 
+}
+
+.btnDelete {
+    background-color: #e53e3e; 
+    color: white; 
+    /* justify-content: space-between; 사용 시 margin 불필요 */
+    /* margin-left: 10px; */ 
+}
+
+.btnDelete:hover {
+    background-color: #c53030; 
+}
+/* === 버튼 관련 수정된 CSS 끝 === */
 </style>
 
 <?php include "../include/footer.php"; ?>
