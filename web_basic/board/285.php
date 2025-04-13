@@ -112,84 +112,12 @@
 <!-- 후원금 모금 모달 -->
 <div id="donationModal" class="modal">
     <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>후원하기</h2>
-        <form id="donationForm">
-            <input type="hidden" id="noticeId" name="noticeId">
-            
-            <div class="form-group">
-                <label>후원 유형</label>
-                <div class="radio-group">
-                    <label class="radio-label">
-                        <input type="radio" name="donationType" value="regular" required> 정기 후원
-                    </label>
-                    <label class="radio-label">
-                        <input type="radio" name="donationType" value="one-time" required> 일시 후원
-                    </label>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label>후원금액</label>
-                <div class="amount-group">
-                    <label class="amount-label">
-                        <input type="radio" name="donationAmount" value="10000" required> 1만원
-                    </label>
-                    <label class="amount-label">
-                        <input type="radio" name="donationAmount" value="30000" required> 3만원
-                    </label>
-                    <label class="amount-label">
-                        <input type="radio" name="donationAmount" value="50000" required> 5만원
-                    </label>
-                    <label class="amount-label">
-                        <input type="radio" name="donationAmount" value="100000" required> 10만원
-                    </label>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label>후원자 유형</label>
-                <div class="radio-group">
-                    <label class="radio-label">
-                        <input type="radio" name="donorType" value="personal" required onclick="toggleDonorFields()"> 개인
-                    </label>
-                    <label class="radio-label">
-                        <input type="radio" name="donorType" value="organization" required onclick="toggleDonorFields()"> 기업/단체
-                    </label>
-                </div>
-            </div>
-
-            <div id="personalFields">
-                <div class="form-group">
-                    <label for="donorName">이름</label>
-                    <input type="text" id="donorName" name="donorName" required>
-                </div>
-                <div class="form-group">
-                    <label for="donorPhone">휴대폰 번호</label>
-                    <input type="tel" id="donorPhone" name="donorPhone" required>
-                </div>
-            </div>
-
-            <div id="organizationFields" style="display: none;">
-                <div class="form-group">
-                    <label for="orgName">기업/단체명</label>
-                    <input type="text" id="orgName" name="orgName">
-                </div>
-                <div class="form-group">
-                    <label for="orgContactName">담당자명</label>
-                    <input type="text" id="orgContactName" name="orgContactName">
-                </div>
-                <div class="form-group">
-                    <label for="orgContactPhone">담당자 연락처</label>
-                    <input type="tel" id="orgContactPhone" name="orgContactPhone">
-                </div>
-            </div>
-
-            <div class="form-buttons">
-                <button type="submit" class="btnSubmit">후원하기</button>
-                <button type="button" class="btnCancel" onclick="closeDonationModal()">취소</button>
-            </div>
-        </form>
+        <span class="close" onclick="closeDonationModal()">&times;</span>
+        <h2>준비중입니다</h2>
+        <p>현재 후원하기 기능은 준비 중입니다. 나중에 다시 시도해 주세요.</p>
+        <div class="form-buttons">
+            <button type="button" class="btnCancel" onclick="closeDonationModal()">닫기</button>
+        </div>
     </div>
 </div>
 
