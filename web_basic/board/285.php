@@ -1,7 +1,7 @@
 <?php 
 // 필수 파일 포함
-include "../include/db_connect.php"; // 데이터베이스 연결
 include "../include/header.php"; 
+include "../include/db_connect.php"; // 데이터베이스 연결
 // include "../include/admin_check.php"; // 관리자 확인 (필요에 따라 주석 해제 또는 사용)
 
 // --- 검색 변수 처리 ---
@@ -43,13 +43,10 @@ $page_num = 10; // 페이지 블록 당 보여줄 페이지 수
 $start = ($page - 1) * $list_num; // 가져올 게시글의 시작 위치 (offset)
 
 // --- ★★★ WHERE 절 조합 (is_deleted = 0 추가) ★★★ ---
-$combined_where = "";
-if (!empty($where_sql_search)) {
-    // 검색 조건이 있으면, 'WHERE'를 'AND (' 로 바꾸고 'is_deleted=0' 뒤에 추가
-    $combined_where = " WHERE is_deleted = 0 " . str_replace(' WHERE ', ' AND (', $where_sql_search) . ')'; 
-} else {
-    // 검색 조건이 없으면 is_deleted=0 만 사용
-    $combined_where = " WHERE is_deleted = 0";
+$combined_where = " WHERE is_deleted = 0";
+if (!empty($where_sql)) {
+    // 검색 조건이 있으면, 'WHERE'를 'AND' 로 바꾸고 'is_deleted=0' 뒤에 추가
+    $combined_where .= " AND (" . substr($where_sql, 7) . ")"; 
 }
 
 // --- 전체 게시글 수 조회 ---
@@ -89,8 +86,8 @@ if ($e_page > $total_page) $e_page = $total_page;
 
 // --- ★★★ 게시글 목록 조회 (수정된 WHERE 절 + LIMIT) ★★★ ---
 $list_sql = "SELECT sno, title, author, created_at, views FROM notices" 
-          . $combined_where // 조합된 WHERE 사용
-          . " ORDER BY sno DESC LIMIT ?, ?"; // LIMIT 파라미터 추가
+            . $combined_where // 조합된 WHERE 사용
+            . " ORDER BY sno DESC LIMIT ?, ?"; // LIMIT 파라미터 추가
 
 $stmt_list = $conn->prepare($list_sql);
 
@@ -238,7 +235,6 @@ $conn->close(); // 데이터베이스 연결 종료
                             <label class="lhide" for="search">검색할 조건을 선택해주세요</label>
                             <select class="select" name="search_option" id="search" title="검색할 조건을 선택해주세요">
                                 <option value="제목" <?php echo $search_option === '제목' ? 'selected' : ''; ?>>제목</option>
-                                <option value="내용" <?php echo $search_option === '내용' ? 'selected' : ''; ?>>내용</option>
                                 <option value="작성자" <?php echo $search_option === '작성자' ? 'selected' : ''; ?>>작성자</option> 
                             </select>
                             <div class="searchBox">
