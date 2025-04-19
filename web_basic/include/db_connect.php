@@ -22,6 +22,7 @@ if (!$conn) {
     error_log("Database Connection Error: " . mysqli_connect_error()); // 오류 로그 기록
     die("데이터베이스 연결에 실패했습니다. 관리자에게 문의하세요."); 
 }
+$conn->set_charset("utf8mb4");
 
 // --- 문자 인코딩 설정 (UTF-8) ---
 // 데이터베이스와 PHP 간의 데이터 전송 시 문자 깨짐 방지

@@ -1,13 +1,8 @@
 <?php 
 // 데이터베이스 연결 파일 포함
-
-include "../include/db_connect.php"; 
 include "../include/header.php"; 
+include "../include/db_connect.php"; 
 
-// 세션 시작
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
 
 $notice = null; 
 $error_message = null; 
