@@ -67,8 +67,8 @@
                 <ul class="ciList">
                     <li>
                         국문
-                        <p class="imgBox"><img src="/web_basic/img/introduce/ci_kr.png" alt="국문 CI" style="width: 300px; height: auto;"></p>
-                        <p class="btnCi"><a href="/web_basic/img/introduce/ci_kr.png" download=""><img src="/web_basic/img/introduce/ci_jpg_down.gif" alt="국문 CI JPG 다운로드"></a><a href="/web_basic/img/introduce/ci_kor.ai" download=""><img src="/web_basic/img/introduce/ci_ai_down.gif" alt="국문 CI AI 다운로드"></a></p>
+                        <p class="imgBox"><img src="/web_basic/img/introduce/ci_kr_3.png" alt="국문 CI" style="width: 300px; height: auto;"></p>
+                        <p class="btnCi"><a href="/web_basic/img/introduce/ci_kr_3.png" download=""><img src="/web_basic/img/introduce/ci_jpg_down.gif" alt="국문 CI JPG 다운로드"></a><a href="/web_basic/img/introduce/ci_kor.ai" download=""><img src="/web_basic/img/introduce/ci_ai_down.gif" alt="국문 CI AI 다운로드"></a></p>
                     </li>
                     <li>
                         영문

@@ -9,7 +9,7 @@
 $db_host = "localhost";       // 데이터베이스 서버 주소 (일반적으로 localhost)
 $db_user = "notice_admin";            // 데이터베이스 사용자 이름 (실제 사용자 이름으로 변경하세요)
 $db_pass = "cd0926";                // 데이터베이스 비밀번호 (실제 비밀번호로 변경하세요)
-$db_name = "web_basic";      // 사용할 데이터베이스 이름 (실제 데이터베이스 이름으로 변경하세요)
+$db_name = "test";      // 사용할 데이터베이스 이름 (실제 데이터베이스 이름으로 변경하세요)
 // --- MySQLi 연결 시도 ---
 $conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
 
