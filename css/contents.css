@@ -141,7 +141,7 @@ label{vertical-align:-2px;margin:0 7px 0 3px;}
 .halfCont > .imgBox, .halfCont > dl{width:600px;}
 .halfCont > dl{padding:40px 0 0 77px; }
 .halfCont > dl dd{font-size:2.4rem;line-height:1.5;margin-top:14px;padding-left:3px;}
-.halfNumList{font-size:2rem;}
+.halfNumList{font-size:2rem; margin: 10px 0;}
 .halfNumList li{display:flex;align-items:baseline;margin-bottom:10px;}
 .halfNumList li:last-child{margin-bottom:0;}
 .halfNumList li .numberSpan{width:23px;height:23px;line-height:23px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.6rem;border-radius:50%;background:#00afb1;color:#fff;margin-right:9px;}

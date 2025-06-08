@@ -2,7 +2,7 @@
 // 필수 파일 포함
 include "../include/header.php"; 
 include "../include/db_connect.php"; // 데이터베이스 연결
-// include "../include/admin_check.php"; // 관리자 확인 (필요에 따라 주석 해제 또는 사용)
+include "../include/admin_check.php"; // 관리자 확인 (필요에 따라 주석 해제 또는 사용)
 
 // --- 검색 변수 처리 ---
 // GET 파라미터에서 검색 옵션과 검색어 가져오기 (XSS 방지)
@@ -68,6 +68,7 @@ if (!empty($search_param_type)) {
         call_user_func_array([$stmt_count, 'bind_param'], $bind_params_count);
     }
 }
+
 $stmt_count->execute();
 $result_count = $stmt_count->get_result();
 $row_count = $result_count->fetch_assoc();
@@ -90,7 +91,10 @@ $list_sql = "SELECT sno, title, author, created_at, views FROM notices"
             . " ORDER BY sno DESC LIMIT ?, ?"; // LIMIT 파라미터 추가
 
 $stmt_list = $conn->prepare($list_sql);
-
+if (!$stmt_list) {
+    // prepare 실패 시 에러 메시지 출력
+    die("SQL prepare 실패 (게시글 목록 조회): " . $conn->error);
+}
 // 파라미터 바인딩 (검색 파라미터 + LIMIT 파라미터)
 $limit_param_type = "ii"; 
 $limit_param_val = [$start, $list_num];
@@ -149,7 +153,7 @@ $conn->close(); // 데이터베이스 연결 종료
     </script>
     <div class="subTop">
         <div class="pageGroup">
-            <h2>공지/뉴스</h2>
+            <h2>공지</h2>
         </div>
         <div id="lnb">
              <a href="/web_basic/board/list.php?pagen=285">전체</a> 
@@ -164,9 +168,11 @@ $conn->close(); // 데이터베이스 연결 종료
         <div class="contents page_285">
             <div class="boardWrap">
                 <div class="boardList">
-                    <div class="boardManage">
-                        <a href="/web_basic/board/write.php" class="btnWrite">글 작성</a> 
-                    </div>
+                    <?php if (function_exists('isAdmin') && isAdmin()): ?>
+                        <div class="boardManage">
+                            <a href="/web_basic/board/write.php" class="btnWrite">글 작성</a> 
+                        </div>
+                    <?php endif; ?>
                     <table>
                         <thead>
                             <tr>

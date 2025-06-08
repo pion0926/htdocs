@@ -1,108 +1,155 @@
-<?php
-include_once('../include/header.php');
+<?php 
+// 필수 파일 포함
+include "../include/header.php"; 
+include "../include/db_connect.php"; // 데이터베이스 연결
+include "../include/admin_check.php"; // 관리자 확인 (필요에 따라 주석 해제 또는 사용)
 ?>
 
-<div class="container">
-    <section class="contents">
-        <div class="boardWrap">
-            <div class="boardList">
-                <div class="listWrap">
-                    <ul>
-                        <li>
-                            <p class="imgBox"><img src="https://img2.stibee.com/187_2539245_1733129114501046037.png" style="display: inline; vertical-align: bottom; text-align: center; max-width: 100%; height: auto; border: 0px;" width="630" class="stb-center"></p>
-                            <dl>
-                                <dt>[2024.11] 11월, 첫 눈처럼 풍성한 소식들⛄</dt>
-                                <dd>안녕하세요, $%name%$님!벌써 2024년의 끝자락을 바라보고 있네요.얼마 전에 내린 첫눈은 다들 어떠셨나요? 정말 많이 내렸죠.⛄추운 날씨에 감기 조심하시고, 항상 안전한 출퇴근길이 되시길 바랍니다.글로벌헬스파트너스에도 첫눈처럼 설레고 풍성한 소식들이 준비되어 있어요.오늘 하루도 미소 짓는 시간 되시길 바라며🌝11월 소식 시작합니다! *사진을 클릭하시면 관련 페이지로 넘어갑니다.</dd>
-                                <dd class="stateTag"><a href="/web_basic/board/view.php?pagen=300&amp;sno=1730&amp;search_option=&amp;search_info=&amp;paging=1&amp;iPage=1&amp;ipage_size=10">자세히 보기 <img src="/web_basic/img/board/btn_gallery_arrow.gif" alt="Icon"></a></dd>
-                            </dl>
-                        </li>
-                        <!-- Additional list items will be added here -->
+<style>
+.news-section {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.news-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1d2b59;
+    margin-bottom: 20px;
+}
+
+.news-subtitle {
+    font-size: 16px;
+    color: #444;
+    margin-bottom: 40px;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.news-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    overflow: hidden;
+    transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+}
+
+.news-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.news-card h3 {
+    font-size: 18px;
+    margin: 16px 16px 8px;
+    color: #1d2b59;
+}
+
+.news-card p {
+    font-size: 14px;
+    color: #555;
+    margin: 0 16px 16px;
+    line-height: 1.5;
+}
+
+@media (max-width: 480px) {
+    .news-title {
+        font-size: 24px;
+    }
+}
+
+/* 글쓰기 버튼 */
+.boardManage {
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.btnWrite {
+    display: inline-block;
+    padding: 10px 20px; /* 크기 조정 */
+    background: #2c5282;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background 0.2s;
+    font-size: 14px; /* 폰트 크기 */
+}
+
+.btnWrite:hover {
+    background: #2b6cb0;
+}
+</style>
+
+<div id="news" class="wrap">
+    <div class="subTop">
+        <div class="pageGroup">
+            <h2>뉴스</h2>
+        </div>
+        <div id="lnb">
+             <a href="/web_basic/board/list.php?pagen=299">전체</a> 
+            <div class="depth2">
+                <ul>
+                    <li class="<?php echo empty($_GET['CATENUM']) ? 'active' : ''; ?>"><a href="/web_basic/board/list.php?pagen=299" id="depthname">전체</a></li>
                     </ul>
-                </div>
+            </div>
+        </div>
+    </div>
+    <section id="container" class="news group_num_217">
+        <div class="news-section">
+            <h2 class="news-title">글로벌헬스파트너스의 최근 뉴스
+                <?php if (function_exists('isAdmin') && isAdmin()): ?>
+                    <div class="boardManage">
+                        <a href="/web_basic/board/write_news.php" class="btnWrite">글 작성</a>
+                    </div>
+                <?php endif; ?>
+            </h2>
+            <p class="news-subtitle">글로벌헬스파트너스는 국내외 보건의료 봉사, 국제협력, 연구조사 활동을 통해 지구촌 누구도 소외되지 않는 건강한 세상을 만들어가고 있습니다.</p>
 
-                <div class="pageNum">
-                    <ol>
-                        <li class="active"><a href="javascript:;">1</a></li>
-                        <li><a href="javascript:PostPaging(2);">2</a></li>
-                        <li><a href="javascript:PostPaging(3);">3</a></li>
-                        <li><a href="javascript:PostPaging(4);">4</a></li>
-                        <li><a href="javascript:PostPaging(5);">5</a></li>
-                        <li><a href="javascript:PostPaging(6);">6</a></li>
-                        <li><a href="javascript:PostPaging(7);">7</a></li>
-                        <li><a href="javascript:PostPaging(8);">8</a></li>
-                        <li><a href="javascript:PostPaging(9);">9</a></li>
-                        <li><a href="javascript:PostPaging(10);">10</a></li>
-                        <li class="nextArrow"><a href="javascript:PostPaging(2);"><img src="/web_basic/img/board/page_arrow_next.png" alt="다음"></a></li>
-                        <li class="arrowImg"><a href="javascript:PostPaging(18);"><img src="/web_basic/img/board/page_arrow_end.png" alt="맨 끝"></a></li>
-                    </ol>
-                </div>
+            <div class="news-grid">
+                <?php
+                $sql = "SELECT * FROM news WHERE is_visible = 1 ORDER BY published_at DESC LIMIT 9";
+                $result = mysqli_query($conn, $sql);
+                
+                if ($result && mysqli_num_rows($result) > 0) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        $id = (int)$row['id'];
+                        $thumb = htmlspecialchars($row['thumbnail_path']);
+                        $title = htmlspecialchars($row['title']);
+                        $summary = htmlspecialchars(mb_strimwidth(strip_tags($row['summary']), 0, 100, "..."));
 
-                <fieldset class="searchArea">
-                    <form action="/web_basic/board/list.php?pagen=299" name="searchform" method="GET">
-                        <input type="hidden" name="pagen" value="299">
-                        <input type="hidden" name="CATENUM" value="0">
-                        <div class="boardSearch">
-                            <label class="lhide" for="search">검색할 조건을 선택해주세요</label>
-                            <select class="select" name="search_option" id="search" title="검색할 조건을 선택해주세요">
-                                <option value="제목">제목</option>
-                                <option value="내용">내용</option>
-                            </select>
-                            <div class="searchBox">
-                                <label class="lhide" for="searchtext">검색어를 입력하세요.</label>
-                                <input type="text" class="text" placeholder="제목 또는 내용을 입력해주세요." title="제목 또는 내용을 입력해주세요." name="search_info" value="" id="searchtext">
-                                <input type="submit" value="검색">
-                            </div>
+                        echo "
+                        <div class=\"news-card\">
+                            <a href=\"news_view.php?id={$id}\" style=\"text-decoration: none; color: inherit;\">
+                                <img src=\"{$thumb}\" alt=\"썸네일\">
+                                <h3>{$title}</h3>
+                                <p>{$summary}</p>
+                            </a>
                         </div>
-                    </form>
-                </fieldset>
+                        ";
+                    }
+                } else {
+                    echo "<p>등록된 뉴스가 없습니다.</p>";
+                }
+                ?>
             </div>
         </div>
     </section>
+
+
 </div>
 
-<script>
-function PostPaging(pagenum) {
-    var f = document.PostPagingForm;
-    f.paging.value = pagenum;
-    f.submit();
-}
 
-function PostPageGoView(seqno, actionURL) {
-    var f = document.PostViewForm;
-    f.seqno.value = seqno;
-    f.action = actionURL;
-    f.submit();
-}
-
-function PostPageGoModify(seqno, actionURL) {
-    var f = document.PostViewForm;
-    f.seqno.value = seqno;
-    f.action = actionURL;
-    f.submit();
-}
-
-function PostPageGoList(actionURL) {
-    var f = document.PostListForm;
-    f.action = actionURL;
-    f.submit();
-}
-</script>
-
-<form name="PostPagingForm" id="PostPagingForm" action="" method="POST">
-    <input type="hidden" name="paging" value="1">
-    <input type="hidden" name="pagen" value="299">
-</form>
-
-<form name="PostViewForm" id="PostViewForm" action="" method="POST">
-    <input type="hidden" name="seqno">
-    <input type="hidden" name="returnpagen" value="299">
-    <input type="hidden" name="pagen" value="299">
-</form>
-
-<form name="PostListForm" id="PostListForm" action="" method="POST">
-    <input type="hidden" name="pagen" value="299">
-</form>
-
-<?php
-include_once('../include/footer.php');
-?> 
+<?php include "../include/footer.php"; ?>

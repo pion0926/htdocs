@@ -40,7 +40,32 @@
     height: auto;
     display: block;
     max-width: 100%;
-    margin-top: -20%; /* Add negative margin to cut off top 20% */
+}
+.mainBannerCont.slider {
+    width: 100%;
+    height: 600px; /* 원하는 높이 */
+    background-color: #ffffff; 
+    position: relative;
+}
+
+.slide-item {
+    width: 100%;
+    height: 100%; /* 슬라이더 영역 기준 */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* ✅ 세로 중앙 정렬 핵심 */
+    background-color: #ffffff; 
+}
+.slide-item img {
+    height: 100%;           /* 슬라이더의 500px에 맞춤 */
+    width: auto;            /* 비율 유지 */
+    object-fit: contain;    /* 잘림 없이 비율 유지 */
+    display: block;
+}
+.slick-dots,
+.slick-slide-control00,
+.slick-slide-control01 {
+    display: none !important;
 }
 
 .banner-controls {

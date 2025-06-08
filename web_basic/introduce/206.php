@@ -6,7 +6,10 @@
                     <p class="imgBox"><img src="/web_basic/img/introduce/우리의사명.png" alt="사명선언서"></p>
                     <dl>
                         <dt class="contTitle">우리의 사명 <span class="engText">Mission</span></dt>
-                        <dd><span style="color: #00afb1;">Better Health Better Tomorrow</span><br> 지구촌 누구도 소외되지 않는 건강한 삶과 더 나은 내일을 위해 함께합니다.</dd>
+                        <dd>
+                            지구촌 누구도 소외되지 않는 건강한 삶과 더 나은 내일을 위해 함께합니다.<br>
+                            <span style="color: #00afb1;">Better Health Better Tomorrow</span>
+                        </dd>
                     </dl>
                 </div>
                 <div class="halfCont">
@@ -33,27 +36,30 @@
                 </div>
                 <ul class="iconList bg_f2fafb" style="display: flex; justify-content: space-between;">
                     <li style="flex: 1; text-align: center;">
-                        <p class="imgBox"><img src="/web_basic/img/introduce/core_value01.png" alt="건강 형평성" style="width: 80px; height: auto;"><br><strong>건강 형평성</strong> <br>(Health Equity)<br> </p>
+                        <!-- <p class="imgBox"><img src="/web_basic/img/introduce/core_value01.png" alt="건강 형평성" style="width: 80px; height: auto;"><br><strong>건강 형평성</strong> <br>(Health Equity)<br> </p> -->
                         <dl>
-                            <dt> </dt>
+                            <dt>건강 형평성</dt>
                             <dd>건강기본권을 지키고,<br> 지구촌 누구도 소외되지 않는 <br> 보건의료서비스 접근성을 확보합니다.</dd>
                         </dl>
                     </li>
-                    <li><p class="imgBox"><img src="/web_basic/img/introduce/core_value02.png" alt="Diversity Respect" style="width: 80px; height: auto;"><br><strong>지속가능성</strong> <br>(Sustainability)<br> </p>
+                    <li>
+                        <!-- <p class="imgBox"><img src="/web_basic/img/introduce/core_value02.png" alt="Diversity Respect" style="width: 80px; height: auto;"><br><strong>지속가능성</strong> <br>(Sustainability)<br> </p> -->
                         <dl>
-                            <dt> </dt>
+                            <dt>지속 가능성</dt>
                             <dd>단기적인 지원을 넘어,<br> 지속 가능한 성장과 발전을<br> 추구합니다. </dd>
                         </dl>
                     </li>
-                    <li><p class="imgBox"><img src="/web_basic/img/introduce/core_value03.png" alt="혁신과 협력" style="width: 80px; height: auto;"><br> <strong>혁신과 협력</strong> <br>(Innovation & Collaboration)<br> </p>
+                    <li>
+                        <!-- <p class="imgBox"><img src="/web_basic/img/introduce/core_value03.png" alt="혁신과 협력" style="width: 80px; height: auto;"><br> <strong>혁신과 협력</strong> <br>(Innovation & Collaboration)<br> </p> -->
                         <dl>
-                            <dt> </dt>
+                            <dt>혁신과 협력</dt>
                             <dd>다양한 파트너 및 전문가들과 협력하여,<br>혁신적인 보건의료 솔루션을 모색하고<br> 제공합니다.</dd>
                         </dl>
                     </li>
-                    <li><p class="imgBox"><img src="/web_basic/img/introduce/core_value04.png" alt="투명성과 신뢰" style="width: 80px; height: auto;"><br> <strong>투명성과 신뢰</strong> <br> (Transparency & Trust)<br> </p>
+                    <li>
+                        <!-- <p class="imgBox"><img src="/web_basic/img/introduce/core_value04.png" alt="투명성과 신뢰" style="width: 80px; height: auto;"><br> <strong>투명성과 신뢰</strong> <br> (Transparency & Trust)<br> </p> -->
                         <dl>
-                            <dt> </dt>
+                            <dt>투명성과 신뢰</dt>
                             <dd>투명하고 윤리적인 경영으로 ,<br>후원자와 협력 기관, 지역사회와<br> 신뢰를 구축합니다.</dd>
                         </dl>
                     </li>
@@ -67,13 +73,13 @@
                 <ul class="ciList">
                     <li>
                         국문
-                        <p class="imgBox"><img src="/web_basic/img/introduce/ci_kr_3.png" alt="국문 CI" style="width: 300px; height: auto;"></p>
+                        <p class="imgBox"><img src="/web_basic/img/introduce/ci_kr_3.png" alt="국문 CI" style="width: auto; height: 80px;"></p>
                         <p class="btnCi"><a href="/web_basic/img/introduce/ci_kr_3.png" download=""><img src="/web_basic/img/introduce/ci_jpg_down.gif" alt="국문 CI JPG 다운로드"></a><a href="/web_basic/img/introduce/ci_kor.ai" download=""><img src="/web_basic/img/introduce/ci_ai_down.gif" alt="국문 CI AI 다운로드"></a></p>
                     </li>
                     <li>
                         영문
-                        <p class="imgBox"><img src="/web_basic/img/introduce/ci_eng(2).png" alt="영문 CI" style="width: 300px; height: auto;"></p>
-                        <p class="btnCi"><a href="/web_basic/img/introduce/ci_eng(2).png" download=""><img src="/web_basic/img/introduce/ci_jpg_down.gif" alt="영문 CI JPG 다운로드"></a><a href="/web_basic/img/introduce/ci_eng.ai" download=""><img src="/web_basic/img/introduce/ci_ai_down.gif" alt="영문 CI AI 다운로드"></a></p>
+                        <p class="imgBox"><img src="/web_basic/img/introduce/ci_eng(3).png" alt="영문 CI" style="width: auto; height: 80px;"></p>
+                        <p class="btnCi"><a href="/web_basic/img/introduce/ci_eng(3).png" download=""><img src="/web_basic/img/introduce/ci_jpg_down.gif" alt="영문 CI JPG 다운로드"></a><a href="/web_basic/img/introduce/ci_eng.ai" download=""><img src="/web_basic/img/introduce/ci_ai_down.gif" alt="영문 CI AI 다운로드"></a></p>
                     </li>
                 </ul>
                 <div class="ciCont">

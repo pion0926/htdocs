@@ -35,7 +35,7 @@
 
                     <div class="halfCont zigzagCont">
                         <div class="imgBox">
-                            <img src="/web_basic/img/business/evaluation.jpg" alt="사업평가 - 데이터 분석 및 평가 회의">
+                            <img src="/web_basic/img/business/evaluation.JPG" alt="사업평가 - 데이터 분석 및 평가 회의">
                         </div>
                         <dl>
                             <dt class="contTitle">사업평가 (Project Evaluation)</dt>

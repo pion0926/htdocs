@@ -36,12 +36,8 @@ $current_section = isset($_GET['section']) ? $_GET['section'] : '';
     <span><a href="/web_basic/board/list.php?section=news&pagen=285">소식</a></span>
     <div class="depth">
         <ul>
-            <li><a href="/web_basic/board/list.php?section=news&pagen=285">공지/뉴스</a></li>
-            <!-- <li><a href="/web_basic/board/list.php?section=news&pagen=299">뉴스레터</a></li>
-            <li><a href="/web_basic/news/list.php?section=news&pagen=337">소식지</a></li> -->
-            <!-- <li><a href="/web_basic/report/list.php?section=news&pagen=328">연차보고</a></li> -->
-            <!-- <li><a href="/web_basic/board_custom/books/list.php?section=news&pagen=348">책자</a></li> -->
-            <!-- <li><a href="/web_basic/board/list.php?section=news&pagen=314">사진/영상</a></li> -->
+            <li><a href="/web_basic/board/list.php?section=news&pagen=285">공지</a></li>
+            <li><a href="/web_basic/board/list.php?section=news&pagen=299">뉴스</a></li>
         </ul>
     </div>
 </li> 

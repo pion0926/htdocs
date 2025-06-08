@@ -199,7 +199,7 @@
                                     <div class="depth">
                                         <ul>
                                                                                                     <li>
-                                                                <a href="/web_basic/board/list.php?pagen=285" target="_self">공지/뉴스</a>
+                                                                <a href="/web_basic/board/list.php?pagen=285" target="_self">공지</a>
                                                             </li>
                                                                                                                 <li>
                                                                 <a href="/web_basic/board/list.php?pagen=299" target="_self">뉴스레터</a>

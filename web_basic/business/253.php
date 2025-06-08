@@ -21,7 +21,7 @@
                 </div>
                 <div class="imgBox">
                     <p class="img_box"><img src="/web_basic/img/business/dispatch_staus_01.jpg" alt="파견현황"></p>
-                    <div class="btn_view_img btn_view_img_block"><a href="/imgviewer.php?imgsource=/web_basic/img/business/dispatch_staus_01.jpg"><img src="/img/common/btn_view_img.png" alt="이미지 자세히보기"></a></div>
+                    <!-- <div class="btn_view_img btn_view_img_block"><a href="/imgviewer.php?imgsource=/web_basic/img/business/dispatch_staus_01.jpg"><img src="/img/common/btn_view_img.png" alt="이미지 자세히보기"></a></div> -->
                 </div>
             </div>
             
@@ -31,7 +31,7 @@
                 </div>
                 <div class="imgBox">
                     <p class="img_box"><img src="/web_basic/img/business/dispatch_process.jpg" alt="지구촌봉사단 파견과정"></p>
-                    <div class="btn_view_img btn_view_img_block"><a href="/imgviewer.php?imgsource=/web_basic/img/business/dispatch_process.jpg"><img src="/img/common/btn_view_img.png" alt="이미지 자세히보기"></a></div>
+                    <!-- <div class="btn_view_img btn_view_img_block"><a href="/imgviewer.php?imgsource=/web_basic/img/business/dispatch_process.jpg"><img src="/img/common/btn_view_img.png" alt="이미지 자세히보기"></a></div> -->
                 </div>
             </div>
             

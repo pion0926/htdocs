@@ -91,7 +91,7 @@ $is_admin = isset($_SESSION['is_admin']) && $_SESSION['is_admin'] === true; // �
     </script>
     <div class="subTop">
         <div class="pageGroup">
-            <h2>공지/뉴스</h2>
+            <h2>공지</h2>
         </div>
         <div id="lnb">
             <a href="/web_basic/board/list.php?pagen=285">전체</a> 

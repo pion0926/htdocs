@@ -256,3 +256,30 @@
 
 
 }
+
+.footerBottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.footerBottom .copy {
+    font-size: 1.3rem;
+    color: #919191;
+    margin: 10px 0;
+}
+
+.footerBottom .footerLogo img {
+    height: 36px;
+    width: auto;
+    margin: 10px 0;
+}
+
+@media screen and (max-width: 480px) {
+    .footerBottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}

@@ -8,8 +8,24 @@
 .topLine:before{width:400px;height:2px;background:#99dadd;position:absolute;top:0;left:50%;transform:translateX(-50%);content:'';}
 .topLine.topLineFull:before{width:100%;}
 .sectionTop{padding-bottom:45px;}
-.shotLine{position:relative;padding-top:10px;}
-.shotLine:before{width:40px;height:4px;background:#00afb1;position:absolute;top:0;left:0;content:'';border-radius:30px; }
+.shotLine {
+  position: relative;
+  text-align: center;
+  font-size: 2rem;
+  margin: 40px 0;
+}
+
+.shotLine:before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -20px; /* 위에 위치 조정 */
+  width: 40px;
+  height: 4px;
+  background: #00afb1;
+  border-radius: 30px;
+}
 .sectionTitleSolo{margin-bottom:47px;}
 
 .bg_f2fafb{position:relative;}
@@ -141,7 +157,7 @@ label{vertical-align:-2px;margin:0 7px 0 3px;}
 .halfCont > .imgBox, .halfCont > dl{width:600px;}
 .halfCont > dl{padding:40px 0 0 77px; }
 .halfCont > dl dd{font-size:2.4rem;line-height:1.5;margin-top:14px;padding-left:3px;}
-.halfNumList{font-size:2rem;}
+.halfNumList{font-size:2rem; margin: 10px 0;}
 .halfNumList li{display:flex;align-items:baseline;margin-bottom:10px;}
 .halfNumList li:last-child{margin-bottom:0;}
 .halfNumList li .numberSpan{width:23px;height:23px;line-height:23px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.6rem;border-radius:50%;background:#00afb1;color:#fff;margin-right:9px;}
@@ -156,11 +172,37 @@ label{vertical-align:-2px;margin:0 7px 0 3px;}
 .iconList li > .imgBox img{margin-bottom:18px;}
 .iconList li dl dt{font-size:2.2rem;font-weight:bold;margin:11px 0 14px;}
 .iconList li dl dd, .iconList li > .basicText{font-size:1.8rem;line-height:1.667;}
-.ciList{display:flex;flex-wrap:wrap;justify-content:space-between;margin-bottom:40px;}
-.ciList li{font-size:2.4rem;font-weight:bold;}
-.ciList li > .imgBox{margin:11px 0 15px;}
-.ciList li .btnCi{text-align:right;}
-.ciList li .btnCi a{display:inline-block;margin-left:12px;}
+.ciList {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0;
+  list-style: none;
+  margin: 40px 0;
+}
+
+.ciList li {
+  flex: 0 0 auto;
+  width: 300px;
+  text-align: center;
+}
+
+.ciList .imgBox img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.btnCi {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
 .ciCont dl{margin-top:40px;}
 .ciCont dl:nth-of-type(1){margin-top:0;}
 .ciCont dl dt{font-size:2.4rem;font-weight:bold;margin-bottom:2px;}
@@ -418,7 +460,7 @@ label{vertical-align:-2px;margin:0 7px 0 3px;}
  
 /* KOICA 중기봉사단_20240521 추가 */
 .koicaWrap{padding-bottom:100px;}
-.koicaWrap .shotLine{font-size:2.6rem;letter-spacing:-0.04em;font-weight:700;}
+.koicaWrap .shotLine{font-size:2.6rem;letter-spacing:-0.04em;font-weight:700;text-align: center;}
 .koicaWrap .basicText{font-size:1.8rem;letter-spacing:-0.045em;line-height:1.778;}
 .koicaWrap .koicaTop{text-align:center;}
 .koicaWrap .koicaTop .topImg{position:relative;height:350px;display:flex;align-items:center;justify-content:center;}
@@ -594,7 +636,7 @@ label{vertical-align:-2px;margin:0 7px 0 3px;}
 .section{margin-top:50px;}
 .section.topLine{padding-top:50px;}
 .sectionTop{padding-bottom:22.5px;}
-.shotLine:before{width:32px;height:3px;}
+.shotLine:before{width:32px;height:3px;text-align: center;}
 .sectionTitleSolo{margin-bottom:23.5px;}
 
 .pictureList li{width:49%;}
