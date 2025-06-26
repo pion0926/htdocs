@@ -8,6 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // 실제 환경에서는 해시된 비밀번호를 사용해야 합니다
     if ($username === 'admin' && $password === 'admin123') {
         $_SESSION['admin_logged_in'] = true;
+        $_SESSION['is_admin'] = 1;
         header('Location: /web_basic/board/list.php?pagen=285');
         exit;
     } else {

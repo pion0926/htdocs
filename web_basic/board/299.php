@@ -1,8 +1,7 @@
 <?php 
-// 필수 파일 포함
+include "../include/admin_check.php"; // 관리자 확인 (필요에 따라 주석 해제 또는 사용)
 include "../include/header.php"; 
 include "../include/db_connect.php"; // 데이터베이스 연결
-include "../include/admin_check.php"; // 관리자 확인 (필요에 따라 주석 해제 또는 사용)
 ?>
 
 <style>

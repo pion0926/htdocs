@@ -3,10 +3,6 @@ require_once "../include/admin_check.php";
 include "../include/db_connect.php"; 
 include "../include/header.php"; 
 
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
-
 $default_author = '관리자';
 ?>
 
@@ -30,7 +26,7 @@ $default_author = '관리자';
         <div class="contents page_write">
             <div class="boardWrap">
                 <h3>뉴스 작성</h3>
-                <form method="POST" action="write_news_process.php" enctype="multipart/form-data" onsubmit="return validateForm()">
+                <form method="POST" action="write_news_process.php" enctype="multipart/form-data" onsubmit="return validateFormAndSync()">
                     <table class="boardWrite">
                         <colgroup>
                             <col style="width: 15%;">
@@ -52,7 +48,7 @@ $default_author = '관리자';
                             <tr>
                                 <th scope="row"><label for="content">내용</label></th>
                                 <td>
-                                    <textarea name="content" id="content" rows="15" required class="textarea" style="width: 98%;"></textarea>
+                                    <textarea name="content" id="content" rows="15" class="textarea" style="width: 98%;"></textarea>
                                 </td>
                             </tr>
                             <tr>
@@ -76,6 +72,7 @@ $default_author = '관리자';
 </div>
 
 <script>
+let myEditor;
 ClassicEditor
     .create(document.querySelector('#content'), {
         extraPlugins: [CustomUploadAdapterPlugin]
@@ -89,6 +86,25 @@ ClassicEditor
         });
     })
     .catch(error => console.error(error));
+
+function validateFormAndSync() {
+    // CKEditor의 데이터를 textarea로 동기화
+    document.querySelector('#content').value = myEditor.getData();
+
+    const title = document.getElementById('title').value.trim();
+    const summary = document.getElementById('summary').value.trim();
+    const content = myEditor.getData().trim(); // 에디터 내부 값
+
+    if (title === '' || summary === '' || content === '') {
+        alert('제목, 요약문, 내용을 모두 입력해주세요.');
+        // 포커스 이동 (원하는 필드에)
+        if (title === '') document.getElementById('title').focus();
+        else if (summary === '') document.getElementById('summary').focus();
+        // else CKEditor는 직접 포커스 힘드니 alert로만 안내
+        return false;
+    }
+    return true;
+}
 
 // ✅ 커스텀 업로드 어댑터 플러그인 정의
 function CustomUploadAdapterPlugin(editor) {

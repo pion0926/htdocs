@@ -1,16 +1,32 @@
 <?php
 include "../include/admin_check.php";
-include "../include/db_connect.php"; // DB 연결 파일
+include "../include/db_connect.php";
 
 $isAdmin = isAdmin(); 
 
-// 최신 이미지 가져오기
-$sql = "SELECT image_path FROM history ORDER BY created_at DESC LIMIT 1";
-$result = mysqli_query($conn, $sql);
 
-$imagePath = "/web_basic/img/introduce/history2.png"; // 기본 이미지
-if ($row = mysqli_fetch_assoc($result)) {
-    $imagePath = $row['image_path'];
+// **진단: 현재 isAdmin() 값 출력**
+error_log("isAdmin value: " . var_export($isAdmin, true));  // 서버 에러로그에서 확인 가능
+// 또는 임시로 화면에 출력
+echo "<!-- isAdmin value: " . htmlspecialchars(var_export($isAdmin, true)) . " -->";
+
+// 기본 이미지 경로
+$imagePath = "/web_basic/img/introduce/history_new.png";
+
+// 예외 발생 대비
+try {
+    $sql = "SELECT image_path FROM history ORDER BY created_at DESC LIMIT 1";
+    $result = mysqli_query($conn, $sql);
+
+    if ($result && mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_assoc($result);
+        if (!empty($row['image_path'])) {
+            $imagePath = $row['image_path'];
+        }
+    }
+} catch (Exception $e) {
+    error_log("History image load error: " . $e->getMessage());
+    // 그냥 기본 이미지 유지
 }
 ?>
 
@@ -23,7 +39,7 @@ if ($row = mysqli_fetch_assoc($result)) {
                 </div>
 
                 <?php if ($isAdmin): ?>
-                    <form action="upload_history.php" method="post" enctype="multipart/form-data">
+                    <form action="upload_history.php" method="post" enctype="multipart/form-data" style="margin-top: 20px;">
                         <input type="file" name="history_image" accept="image/*" required>
                         <button type="submit">upload_new_image</button>
                     </form>

@@ -1,5 +1,4 @@
 <?php
-// --- 1. 필수 파일 포함 및 세션 시작 ---
 require_once "../include/admin_check.php"; // ★★★ 관리자 권한 확인 필수! ★★★
 require_once "../include/db_connect.php"; // 데이터베이스 연결 필수
 

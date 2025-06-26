@@ -10,7 +10,7 @@
 
             <div style="text-align: center; margin: 50px auto; padding: 20px; width: 100%; box-sizing: border-box;">
                 <div style="max-width: 1200px; margin: 0 auto;">
-                    <img src="/web_basic/img/introduce/준비중.gif" alt="준비중입니다" style="max-width: 100%; height: auto;">
+                    <img src="/web_basic/img/main/재정보고이미지_0626.png" alt="재정보고이미지_0626" style="max-width: 100%; height: auto;">
                 </div>
             </div>
         </div>

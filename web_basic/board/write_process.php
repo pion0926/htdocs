@@ -1,5 +1,4 @@
 <?php
-// 필수 파일 포함
 require_once "../include/admin_check.php"; 
 
 include "../include/db_connect.php"; // 데이터베이스 연결 필수

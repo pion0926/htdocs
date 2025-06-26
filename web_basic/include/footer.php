@@ -32,7 +32,8 @@
                             "kofi.png" => "https://www.kofih.org/",
                             "충청북도.png" => "https://www.chungbuk.go.kr/",
                             "충북시민사회지원센터.png" => "http://www.cbngo.org/main.php",
-                            "충북대학교.png" => "https://www.chungbuk.ac.kr/"
+                            "충북대학교.png" => "https://www.chungbuk.ac.kr/",
+                            "청주시자원봉사센터2.png" => "https://cj1365.or.kr/",
                         ];
                         // Duplicate logos for seamless carousel
                         for ($i = 0; $i < 2; $i++) {

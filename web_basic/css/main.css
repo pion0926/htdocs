@@ -156,6 +156,7 @@
 .report-link {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     padding: 12px 25px;
     background: #007bff;
     color: #fff;
@@ -169,7 +170,7 @@
 }
 
 .link-text {
-    margin-right: 10px;
+    margin-right: 0px;
     font-weight: 500;
 }
 
