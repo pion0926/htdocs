@@ -94,13 +94,14 @@ if ($id > 0 && $conn) {
                         <div class="viewBottom">
                             <div class="btnWrap">
                                 <a href="/web_basic/board/list.php?pagen=299" class="btnList">목록</a>
-                                
-                                <div class="btnGroup">
-                                    <a href="edit_news.php?id=<?= htmlspecialchars($id) ?>" class="btnEdit">수정</a>
-                                    <a href="delete_news_process.php?id=<?= $news['id'] ?>"
-                                        class="btnDelete"
-                                        onclick="return confirm('정말로 이 뉴스 기사를 삭제하시겠습니까?\n삭제 후 목록에서는 보이지 않게 됩니다.');">삭제</a>
-                                </div>
+                                <?php if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] === 1): ?>
+                                    <div class="btnGroup">
+                                        <a href="edit_news.php?id=<?= htmlspecialchars($id) ?>" class="btnEdit">수정</a>
+                                        <a href="delete_news_process.php?id=<?= $news['id'] ?>"
+                                            class="btnDelete"
+                                            onclick="return confirm('정말로 이 뉴스 기사를 삭제하시겠습니까?');">삭제</a>
+                                    </div>
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>

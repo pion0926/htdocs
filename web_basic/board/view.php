@@ -157,16 +157,12 @@ $is_admin = isset($_SESSION['is_admin']) && $_SESSION['is_admin'] === true; // �
                         <div class="viewBottom">
                             <div class="btnWrap">
                                 <a href="/web_basic/board/list.php?pagen=285" class="btnList">목록</a>
-                                
-                                <div class="btnGroup">
-                                    <a href="edit.php?sno=<?php echo htmlspecialchars($sno); ?>" 
-                                        class="btnEdit">수정
-                                    </a>
-                                    <a href="delete_process.php?sno=<?php echo $notice['sno']; ?>"
-                                        class="btnDelete"
-                                        onclick="return confirm('정말로 이 게시글을 삭제하시겠습니까?\n삭제 후 목록에서는 보이지 않게 됩니다.');">삭제
-                                    </a>
-                                </div>
+                                <?php if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] === 1): ?>
+                                    <div class="btnGroup">
+                                        <a href="edit.php?sno=<?= htmlspecialchars($sno) ?>" class="btnEdit">수정</a>
+                                        <a href="delete_process.php?sno=<?= htmlspecialchars($sno) ?>" class="btnDelete" onclick="return confirm('정말 삭제하시겠습니까?');">삭제</a>
+                                    </div>
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>
