@@ -15,7 +15,7 @@
                     <div class="mainBannerBox">
                         <div class="mainBannerCont slider">
                             <?php
-                            $images = ["bg0.png", "bg1.png", "bg2.png", "bg3.png", "bg4.png"];
+                            $images = ["bg0.png", "bg1.png", "bg2.png", "bg3.png", "bg4.png", "bg5.png", "bg6.png", "bg7.png"];
                             foreach ($images as $img) {
                                 echo "<div class='slide-item'><img src=\"/web_basic/program/file/{$img}\" alt=\"메인 배너\"></div>";
                             }

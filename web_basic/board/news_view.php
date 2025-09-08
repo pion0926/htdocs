@@ -94,6 +94,13 @@ if ($id > 0 && $conn) {
                         <div class="viewBottom">
                             <div class="btnWrap">
                                 <a href="/web_basic/board/list.php?pagen=299" class="btnList">목록</a>
+                                
+                                <div class="btnGroup">
+                                    <a href="edit_news.php?id=<?= htmlspecialchars($id) ?>" class="btnEdit">수정</a>
+                                    <a href="delete_news_process.php?id=<?= $news['id'] ?>"
+                                        class="btnDelete"
+                                        onclick="return confirm('정말로 이 뉴스 기사를 삭제하시겠습니까?\n삭제 후 목록에서는 보이지 않게 됩니다.');">삭제</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -154,25 +161,80 @@ if ($id > 0 && $conn) {
     height: auto;
     margin-bottom: 20px;
 }
+/* === 버튼 관련 수정된 CSS 시작 === */
 .btnWrap {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between; /* 목록 버튼을 왼쪽에, 그룹을 오른쪽에 정렬 */
     align-items: center;
     margin-top: 20px;
 }
+
+.btnGroup {
+    display: flex;
+    gap: 10px; /* 수정과 삭제 버튼 사이 간격 */
+}
+.btnEdit {
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 16px;
+  line-height: normal;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  
+  /* 수정 버튼 고유 색상 설정 */
+  background-color: #cc6301ff; /* 배경색 */
+  color: #ffffff; /* 글자색 */
+}
+
+/* 마우스 오버 시 색상 변경 */
+.btnEdit:hover {
+  background-color: #2b6cb0; /* 호버 시 배경색 */
+}
+.btnList, .btnDelete {
+    /* box-sizing: border-box; 를 추가하여 padding과 border가 너비/높이에 포함되도록 함 */
+    box-sizing: border-box; 
+    display: inline-block; /* 또는 inline-flex */
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 5px; 
+    text-decoration: none; 
+    font-size: 16px; 
+    /* line-height: 1.5; */ /* line-height 대신 padding으로 높이 조절 유도, 기본값 사용 */
+    line-height: normal; 
+    text-align: center; /* 텍스트 중앙 정렬 */
+    vertical-align: middle; /* inline-block 요소간 세로 정렬 */
+    cursor: pointer; 
+    transition: background-color 0.3s, color 0.3s; 
+    /* 최소 높이를 명시적으로 설정하여 일관성 확보 (선택 사항) */
+    /* min-height: 40px; */ /* 버튼 내용과 패딩에 맞는 적절한 값 */
+}
+
 .btnList {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #2c5282;
-    color: white;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 16px;
-    transition: background-color 0.3s;
+    background-color: #2c5282; 
+    color: white; 
 }
+
 .btnList:hover {
-    background-color: #2b6cb0;
+    background-color: #2b6cb0; 
 }
+
+.btnDelete {
+    background-color: #e53e3e; 
+    color: white; 
+    /* justify-content: space-between; 사용 시 margin 불필요 */
+    /* margin-left: 10px; */ 
+}
+
+.btnDelete:hover {
+    background-color: #c53030; 
+}
+/* === 버튼 관련 수정된 CSS 끝 === */
 .error-message {
     text-align: center;
     padding: 40px;

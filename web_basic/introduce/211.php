@@ -40,6 +40,7 @@
     font-size: 1.9rem;
     font-weight: 400;
     line-height: 1.6;
+    word-break: keep-all;
     }
 
     .ambassadorItem.photo dl,
@@ -117,7 +118,7 @@
                     <div class="ambassadorItem text">
                         <dl>
                         <dt>
-                            충북대학교병원 교수이자 충북대학교 국제개발연구소 부소장으로 활동하고 있습니다.
+                            충북대병원 연구교수, 충북대학교 국제개발연구소 부소장을 역임하였습니다.
                             국군간호사관학교에서 간호학을 전공한 후, 연세대학교에서 보건행정학 석·박사 학위를 취득하였으며,
                             스웨덴 Karolinska Institutet에서 Safety Promotion을 연구하였습니다. 국회 정책보좌관,
                             한국보건사회연구원 연구개발팀장, KOICA 프로젝트 현지책임자 등의 경험을 바탕으로 국제보건 및 개발협력

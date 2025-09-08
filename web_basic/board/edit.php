@@ -1,22 +1,45 @@
-<?php 
-require_once "../include/admin_check.php"; 
-include "../include/db_connect.php"; 
-include "../include/header.php"; 
+<?php
+require_once "../include/admin_check.php";
+include "../include/db_connect.php";
+include "../include/header.php";
 
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-$default_author = '관리자';
+// URL 파라미터에서 게시글 번호(sno) 가져오기
+$sno = isset($_GET['sno']) ? (int)$_GET['sno'] : 0;
+
+if ($sno === 0) {
+    echo "<script>alert('잘못된 접근입니다.'); history.back();</script>";
+    exit;
+}
+
+// 데이터베이스에서 해당 게시글 정보 가져오기
+$sql = "SELECT sno, title, content, author FROM notices WHERE sno = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $sno);
+$stmt->execute();
+$result = $stmt->get_result();
+$row = $result->fetch_assoc();
+
+if (!$row) {
+    echo "<script>alert('존재하지 않는 게시글입니다.'); history.back();</script>";
+    exit;
+}
+
+// 불러온 정보를 변수에 할당
+$title = htmlspecialchars($row['title']);
+$content = htmlspecialchars($row['content']);
+$author = htmlspecialchars($row['author']);
 ?>
 
-<!-- CKEditor CDN 추가 -->
-<script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
+<script src="https://cdn.ckeditor.com/4.25.1/standard/ckeditor.js"></script>
 
 <div id="news" class="wrap">
     <script>
     $(function(){
-        $(".subTop #lnb > a").text('글 작성');
+        $(".subTop #lnb > a").text('글 수정');
         $(document).on("click", "#lnb > a", function(e){
             e.preventDefault();
             $("#lnb > div").slideToggle(100);
@@ -32,10 +55,11 @@ $default_author = '관리자';
     <div class="subTop">
         <div class="pageGroup"><h2>공지</h2></div>
         <div id="lnb">
-            <a href="#">글 작성</a> 
+            <a href="#">글 수정</a> 
             <div class="depth2">
                 <ul>
                     <li class="active"><a href="/web_basic/board/write.php">글 작성</a></li>
+                    <li><a href="/web_basic/board/list.php?pagen=285">목록</a></li>
                 </ul>
             </div>
         </div>
@@ -44,10 +68,11 @@ $default_author = '관리자';
     <section id="container" class="news write">
         <div class="contents page_write">
             <div class="boardWrap">
-                <h3>공지사항 작성</h3>
-                <form name="noticeWriteForm" method="POST" action="write_process.php" enctype="multipart/form-data" onsubmit="return validateForm()">
+                <h3>공지사항 수정</h3>
+                <form name="noticeEditForm" method="POST" action="edit_process.php" enctype="multipart/form-data" onsubmit="return validateForm()">
+                    <input type="hidden" name="sno" value="<?php echo htmlspecialchars($sno); ?>">
                     <table class="boardWrite">
-                        <caption>공지사항 작성 폼</caption>
+                        <caption>공지사항 수정 폼</caption>
                         <colgroup>
                             <col style="width: 15%;">
                             <col style="width: 85%;">
@@ -55,31 +80,31 @@ $default_author = '관리자';
                         <tbody>
                             <tr>
                                 <th scope="row"><label for="author">작성자</label></th>
-                                <td><input type="text" name="author" id="author" value="<?php echo $default_author; ?>" required readonly class="input-text"></td>
+                                <td><input type="text" name="author" id="author" value="<?php echo $author; ?>" required readonly class="input-text"></td>
                             </tr>
                             <tr>
                                 <th scope="row"><label for="title">제목</label></th>
-                                <td><input type="text" name="title" id="title" placeholder="제목을 입력하세요" required class="input-text" style="width: 98%;"></td>
+                                <td><input type="text" name="title" id="title" placeholder="제목을 입력하세요" required class="input-text" style="width: 98%;" value="<?php echo $title; ?>"></td>
                             </tr>
                             <tr>
                                 <th scope="row"><label for="content">내용</label></th>
                                 <td>
-                                    <textarea name="content" id="content" rows="15" required class="textarea" style="width: 98%;"></textarea>
+                                    <textarea name="content" id="content" rows="15" required class="textarea" style="width: 98%;"><?php echo $content; ?></textarea>
                                 </td>
                             </tr>
                             <tr>
                                 <th scope="row"><label for="image">이미지 첨부</label></th>
                                 <td>
                                     <input type="file" name="image" id="image" class="input-file" accept="image/*"> 
-                                    <p class="form-hint">이미지 파일을 선택하세요. (JPG, PNG, GIF 등)</p>
+                                    <p class="form-hint">새로운 이미지를 선택하여 변경할 수 있습니다. (기존 이미지는 삭제됩니다.)</p>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
 
                     <div class="btnWrap right">
-                        <button type="submit" class="btnSubmit">작성 완료</button>
-                        <a href="/web_basic/board/list.php?pagen=285" class="btnCancel">취소</a>
+                        <button type="submit" class="btnSubmit">수정 완료</button>
+                        <a href="/web_basic/board/view.php?sno=<?php echo htmlspecialchars($sno); ?>" class="btnCancel">취소</a>
                     </div>
                 </form>
             </div>
@@ -87,7 +112,6 @@ $default_author = '관리자';
     </section>
 </div>
 
-<!-- CKEditor 적용 -->
 <script>
     CKEDITOR.replace('content');
 
@@ -110,6 +134,7 @@ $default_author = '관리자';
 </script>
 
 <style>
+/* 기존 스타일 유지 (btnWrap, btnGroup 등) */
 .boardWrite {
     width: 100%;
     border-top: 2px solid #2c5282;
@@ -183,7 +208,6 @@ $default_author = '관리자';
     background-color: #5a6268;
     border-color: #5a6268;
 }
-.cke_notification.cke_notification_warning { display: none; }
 </style>
 
 <?php include "../include/footer.php"; ?>

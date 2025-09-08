@@ -157,10 +157,16 @@ $is_admin = isset($_SESSION['is_admin']) && $_SESSION['is_admin'] === true; // �
                         <div class="viewBottom">
                             <div class="btnWrap">
                                 <a href="/web_basic/board/list.php?pagen=285" class="btnList">목록</a>
-
-                                <a href="delete_process.php?sno=<?php echo $notice['sno']; ?>"
-                                    class="btnDelete"
-                                    onclick="return confirm('정말로 이 게시글을 삭제하시겠습니까?\n삭제 후 목록에서는 보이지 않게 됩니다.');">삭제</a>
+                                
+                                <div class="btnGroup">
+                                    <a href="edit.php?sno=<?php echo htmlspecialchars($sno); ?>" 
+                                        class="btnEdit">수정
+                                    </a>
+                                    <a href="delete_process.php?sno=<?php echo $notice['sno']; ?>"
+                                        class="btnDelete"
+                                        onclick="return confirm('정말로 이 게시글을 삭제하시겠습니까?\n삭제 후 목록에서는 보이지 않게 됩니다.');">삭제
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -208,13 +214,38 @@ $is_admin = isset($_SESSION['is_admin']) && $_SESSION['is_admin'] === true; // �
 /* === 버튼 관련 수정된 CSS 시작 === */
 .btnWrap {
     display: flex;
-    /* 버튼들을 양쪽 끝으로 배치, 필요시 flex-end 로 변경하여 오른쪽 정렬 */
-    justify-content: space-between; 
-    /* 버튼들의 세로 정렬을 중앙으로 맞춤 */
-    align-items: center; 
-    margin-top: 20px; 
+    justify-content: space-between; /* 목록 버튼을 왼쪽에, 그룹을 오른쪽에 정렬 */
+    align-items: center;
+    margin-top: 20px;
 }
 
+.btnGroup {
+    display: flex;
+    gap: 10px; /* 수정과 삭제 버튼 사이 간격 */
+}
+.btnEdit {
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 16px;
+  line-height: normal;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  
+  /* 수정 버튼 고유 색상 설정 */
+  background-color: #cc6301ff; /* 배경색 */
+  color: #ffffff; /* 글자색 */
+}
+
+/* 마우스 오버 시 색상 변경 */
+.btnEdit:hover {
+  background-color: #2b6cb0; /* 호버 시 배경색 */
+}
 .btnList, .btnDelete {
     /* box-sizing: border-box; 를 추가하여 padding과 border가 너비/높이에 포함되도록 함 */
     box-sizing: border-box; 

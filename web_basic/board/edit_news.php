@@ -4,19 +4,47 @@ include "../include/db_connect.php";
 include "../include/header.php"; 
 
 $default_author = '관리자';
+
+// URL에서 id 가져오기
+$id = isset($_GET['id']) ? intval($_GET['id']) : 0;
+
+if ($id === 0) {
+    echo "<script>alert('잘못된 접근입니다.'); history.back();</script>";
+    exit;
+}
+
+// 데이터베이스에서 해당 뉴스 정보 가져오기
+$sql = "SELECT id, title, content, summary, author, thumbnail_path FROM news WHERE id = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $id);
+$stmt->execute();
+$result = $stmt->get_result();
+$row = $result->fetch_assoc();
+
+if (!$row) {
+    echo "<script>alert('존재하지 않는 뉴스 기사입니다.'); history.back();</script>";
+    exit;
+}
+
+// 불러온 정보를 변수에 할당
+$title = htmlspecialchars($row['title']);
+$summary = htmlspecialchars($row['summary']);
+$content = $row['content']; // CKEditor 내용을 그대로 사용
+$author = htmlspecialchars($row['author']);
+$thumbnail_path = htmlspecialchars($row['thumbnail_path']);
+
 ?>
 
-<!-- CKEditor 5 (무료 최신 버전) -->
 <script src="https://cdn.ckeditor.com/ckeditor5/41.4.2/classic/ckeditor.js"></script>
 
 <div id="news" class="wrap">
     <div class="subTop">
         <div class="pageGroup"><h2>뉴스</h2></div>
         <div id="lnb">
-            <a href="#">글 작성</a> 
+            <a href="#">뉴스 수정</a> 
             <div class="depth2">
                 <ul>
-                    <li class="active"><a href="/web_basic/board/list.php?section=news&pagen=299">뉴스 작성</a></li>
+                    <li class="active"><a href="/web_basic/board/list.php?section=news&pagen=299">뉴스 수정</a></li>
                 </ul>
             </div>
         </div>
@@ -25,9 +53,11 @@ $default_author = '관리자';
     <section id="container" class="news write">
         <div class="contents page_write">
             <div class="boardWrap">
-                <h3>뉴스 작성</h3>
-                <form method="POST" action="write_news_process.php" enctype="multipart/form-data" onsubmit="return validateFormAndSync()">
+                <h3>뉴스 수정</h3>
+                <form method="POST" action="edit_news_process.php" enctype="multipart/form-data" onsubmit="return validateFormAndSync()">
+                    <input type="hidden" name="id" value="<?= htmlspecialchars($id) ?>">
                     <table class="boardWrite">
+                        <caption>뉴스 수정 폼</caption>
                         <colgroup>
                             <col style="width: 15%;">
                             <col style="width: 85%;">
@@ -35,35 +65,41 @@ $default_author = '관리자';
                         <tbody>
                             <tr>
                                 <th scope="row"><label for="author">작성자</label></th>
-                                <td><input type="text" name="author" id="author" value="<?php echo $default_author; ?>" required readonly class="input-text"></td>
+                                <td><input type="text" name="author" id="author" value="<?= $author ?>" required readonly class="input-text"></td>
                             </tr>
                             <tr>
                                 <th scope="row"><label for="title">제목</label></th>
-                                <td><input type="text" name="title" id="title" placeholder="제목을 입력하세요" required class="input-text" style="width: 98%;"></td>
+                                <td><input type="text" name="title" id="title" placeholder="제목을 입력하세요" required class="input-text" style="width: 98%;" value="<?= $title ?>"></td>
                             </tr>
                             <tr>
                                 <th scope="row"><label for="summary">요약문</label></th>
-                                <td><textarea name="summary" id="summary" rows="4" placeholder="간단한 요약을 입력하세요" required class="textarea" style="width: 98%;"></textarea></td>
+                                <td><textarea name="summary" id="summary" rows="4" placeholder="간단한 요약을 입력하세요" required class="textarea" style="width: 98%;"><?= $summary ?></textarea></td>
                             </tr>
                             <tr>
                                 <th scope="row"><label for="content">내용</label></th>
                                 <td>
-                                    <textarea name="content" id="content" rows="15" class="textarea" style="width: 98%;"></textarea>
+                                    <textarea name="content" id="content" rows="15" class="textarea" style="width: 98%;"><?= $content ?></textarea>
                                 </td>
                             </tr>
                             <tr>
                                 <th scope="row"><label for="thumbnail">썸네일 이미지</label></th>
                                 <td>
                                     <input type="file" name="thumbnail" id="thumbnail" class="input-file" accept="image/*"> 
-                                    <p class="form-hint">썸네일 이미지를 선택하세요. (JPG, PNG, GIF 등)</p>
+                                    <p class="form-hint">새로운 이미지를 선택하여 변경할 수 있습니다. (기존 이미지는 삭제됩니다.)</p>
+                                    <?php if ($thumbnail_path): ?>
+                                        <div style="margin-top: 10px;">
+                                            <p>현재 썸네일:</p>
+                                            <img src="<?= htmlspecialchars($thumbnail_path) ?>" alt="현재 썸네일" style="max-width: 150px; height: auto; border: 1px solid #ddd;">
+                                        </div>
+                                    <?php endif; ?>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
 
                     <div class="btnWrap right">
-                        <button type="submit" class="btnSubmit">작성 완료</button>
-                        <a href="/web_basic/board/list.php?pagen=299" class="btnCancel">취소</a>
+                        <button type="submit" class="btnSubmit">수정 완료</button>
+                        <a href="news_view.php?id=<?= htmlspecialchars($id) ?>" class="btnCancel">취소</a>
                     </div>
                 </form>
             </div>
@@ -78,6 +114,7 @@ ClassicEditor
         extraPlugins: [CustomUploadAdapterPlugin]
     })
     .then(editor => {
+        myEditor = editor; // myEditor 변수에 할당
         editor.editing.view.change(writer => {
             const root = editor.editing.view.document.getRoot();
             writer.setStyle('font-size', '16px', root);
@@ -97,10 +134,8 @@ function validateFormAndSync() {
 
     if (title === '' || summary === '' || content === '') {
         alert('제목, 요약문, 내용을 모두 입력해주세요.');
-        // 포커스 이동 (원하는 필드에)
         if (title === '') document.getElementById('title').focus();
         else if (summary === '') document.getElementById('summary').focus();
-        // else CKEditor는 직접 포커스 힘드니 alert로만 안내
         return false;
     }
     return true;
@@ -147,18 +182,6 @@ class MyUploadAdapter {
     abort() {
         // 중단 로직은 선택사항
     }
-}
-
-function validateForm() {
-    const title = document.getElementById('title').value.trim();
-    const summary = document.getElementById('summary').value.trim();
-    const content = document.querySelector('#content').value;
-
-    if (title === '' || summary === '') {
-        alert('제목과 요약문을 모두 입력해주세요.');
-        return false;
-    }
-    return true;
 }
 </script>
 
